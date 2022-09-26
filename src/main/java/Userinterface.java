@@ -9,12 +9,12 @@ public class Userinterface {
     public void startProgram() {
         System.out.println("""
                 Hi, Welcome to the adventure game let's play!
-                1. North
-                2. East
-                3. South
-                4. West
-                5. Look
-                9. End Game""");
+                Tap - 'North'
+                Tap - 'East'
+                Tap - 'South'
+                Tap - 'West'
+                Tap - 'Look'
+                9. End Game""");//TODO skal lave en case end game
 
 
         input = ui.getScanString(); //String som giver errormessage, hvis bruger skriver en anden karakter
