@@ -14,7 +14,7 @@ public class Userinterface {
                 Tap - 'South'
                 Tap - 'West'
                 Tap - 'Look'
-                9. End Game""");//TODO skal lave en case end game
+                9. End Game""");//TODO skal lave en case 'end game'
 
 
         input = ui.getScanString(); //String som giver errormessage, hvis bruger skriver en anden karakter
