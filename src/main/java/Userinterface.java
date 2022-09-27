@@ -7,6 +7,11 @@ public class Userinterface {
     private UI ui = new UI();
     String input;
 
+    public Userinterface (Adventure adventure) {
+        this.adventure = adventure;
+    }
+
+
     public void startProgram() {
         System.out.println("""
                 Hi, Welcome to the adventure game let's play!
@@ -39,7 +44,7 @@ public class Userinterface {
             default:
                 break;
         }
-
+    }
         public void run() {
 
             System.out.println("Welcome to the Adventure Game");
@@ -48,7 +53,11 @@ public class Userinterface {
                 if (choice.equalsIgnoreCase("Go north")) {
                     System.out.println("Going north");
                 } else if (choice.equalsIgnoreCase("Go south")) {
-                    System.out.println("Going south");
+                    if (adventure.goSouth() == true){
+                    System.out.println("You can go south");
+                    System.out.println(adventure.getCurrentRoom());}
+                    else{
+                        System.out.println("You cannot go south");}
                 } else if (choice.equalsIgnoreCase("Go east")) {
                     System.out.println("Going east");
                 } else if (choice.equalsIgnoreCase("Go west")) {
@@ -68,6 +77,6 @@ public class Userinterface {
             }
         }
     }
-}
+
 
 

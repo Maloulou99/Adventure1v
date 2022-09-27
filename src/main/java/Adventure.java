@@ -1,10 +1,8 @@
 public class Adventure {
 
-    Room currentRoom;
+    private Room currentRoom;
 
 
-    public Adventure() {
-    }
 
    public void mapGame() {
         Room room1 = new Room("Room 1", "room with no distinct features, except two doors");
@@ -51,11 +49,13 @@ public class Adventure {
         }
     }
 
-    public void goSouth() {
+    public boolean goSouth() {
         if (currentRoom.getRoomSouth() == null) {
-            System.out.println("You cannot go south");
+            return false;
+            /*System.out.println("You cannot go south");*/
         } else {
             currentRoom = currentRoom.getRoomSouth();
+            return  true;
         }
     }
 
@@ -78,6 +78,8 @@ public class Adventure {
     public String look() {
         return currentRoom.getRoomOption();
     }
-
+public Room getCurrentRoom(){
+       return currentRoom;
+}
 
 }

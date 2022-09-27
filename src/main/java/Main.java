@@ -3,7 +3,8 @@ public class Main {
 
 
     public static void main(String[] args){
-        Userinterface ui = new Userinterface();
+        Adventure adventure = new Adventure();
+        Userinterface ui = new Userinterface(adventure);
         ui.startProgram();
     }
 }
