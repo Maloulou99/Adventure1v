@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Userinterface {
     private Adventure adventure;
+    private Room room;
     private UI ui = new UI();
     String input;
 
@@ -20,8 +21,9 @@ public class Userinterface {
         input = ui.getScanString(); //String som giver errormessage, hvis bruger skriver en anden karakter
         command(input);
     }
-        private void command(String input) {
-            System.out.println("Select an option ");
+
+    private void command(String input) {
+        System.out.println("Select an option ");
 
         switch (input) {
             case "North":
@@ -38,40 +40,33 @@ public class Userinterface {
                 break;
         }
 
-        public void run(){
-        adventure.mapGame();
-                Scanner input = new Scanner(System.in);
+        public void run() {
 
             System.out.println("Welcome to the Adventure Game");
             while (true) {
-                String choice = input.nextLine();
+                String choice = ui.getScanString();
                 if (choice.equalsIgnoreCase("Go north")) {
                     System.out.println("Going north");
-                }
-                else if (choice.equalsIgnoreCase("Go south")) {
+                } else if (choice.equalsIgnoreCase("Go south")) {
                     System.out.println("Going south");
-                }
-                else if (choice.equalsIgnoreCase("Go east")) {
+                } else if (choice.equalsIgnoreCase("Go east")) {
                     System.out.println("Going east");
-                }
-                else if (choice.equalsIgnoreCase("Go west")) {
+                } else if (choice.equalsIgnoreCase("Go west")) {
                     System.out.println("Going west");
-                }
-                else if (choice.equalsIgnoreCase("Exit")) {
+                } else if (choice.equalsIgnoreCase("Exit")) {
                     System.out.println("Exiting Thanks for playing");
                     System.exit(0);
-                }
-                else if (choice.equalsIgnoreCase("Help")) {
+                } else if (choice.equalsIgnoreCase("Help")) {
                     System.out.println("Helping");
-                }
-                else if (choice.equalsIgnoreCase("Look")) {
+                } else if (choice.equalsIgnoreCase("Look")) {
                     System.out.println("Looking");
-                    System.out.println(currentRoom.getName());
-                    System.out.println(currentRoom.getDescription());
-                }
-                else {
+                    System.out.println(room.getRoomName());
+                    System.out.println(room.getRoomOption());
+                } else {
                     System.out.println("You cannot write that");
                 }
+            }
+        }
     }
 }
 

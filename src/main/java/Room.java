@@ -18,6 +18,9 @@ public class Room {
         this.roomEast = roomEast;
         this.roomWest = roomWest;
     }
+    public void setRoomOption(){
+
+    }
 
     //getter
     public Room getRoomNorth() {
@@ -38,5 +41,8 @@ public class Room {
 
     public String getRoomOption() {
         return roomOption;
+    }
+    public String getRoomName(){
+        return roomName;
     }
 }
