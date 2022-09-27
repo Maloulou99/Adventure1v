@@ -1,6 +1,6 @@
 public class Room {
     private String roomName;
-    private String roomOption;
+    private String roomDescription;
     private Room roomNorth;
     private Room roomSouth;
     private Room roomEast;
@@ -9,7 +9,7 @@ public class Room {
     //Konstruktør
     public Room(String roomName, String roomOption) {
         this.roomName = roomName;
-        this.roomOption = roomOption;
+        this.roomDescription = roomOption;
     }
 
     public void setRooms(Room roomNorth, Room roomSouth, Room roomEast, Room roomWest) {
@@ -18,8 +18,18 @@ public class Room {
         this.roomEast = roomEast;
         this.roomWest = roomWest;
     }
-    public void setRoomOption(){
+    public void setRoomNorth(Room roomNorth){
+        this.roomNorth = roomNorth;
+    }
 
+    public void setRoomEast(Room roomEast) {
+        this.roomEast = roomEast;
+    }
+    public void setRoomSouth(Room roomSouth){
+        this.roomSouth = roomSouth;
+    }
+    public void setRoomWest(Room roomWest){
+        this.roomWest = roomWest;
     }
 
     //getter
@@ -39,10 +49,13 @@ public class Room {
         return roomWest;
     }
 
-    public String getRoomOption() {
-        return roomOption;
+    public String getRoomDescription() {
+        return roomDescription;
     }
     public String getRoomName(){
         return roomName;
+    }
+    public String toString(){
+        return roomName + " " + roomDescription;
     }
 }

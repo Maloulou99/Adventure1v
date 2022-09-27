@@ -1,6 +1,3 @@
-import java.util.Scanner;
-
-
 public class Userinterface {
     private Adventure adventure;
     private Room room;
@@ -35,17 +32,34 @@ public class Userinterface {
             switch (input) {
                 case "North":
 
+                boolean isPossible = adventure.goNorth();
+                    if (isPossible) {
+                        System.out.println("You can go north");
+                        System.out.println(adventure.getCurrentRoom());
+                    } else {
+                        System.out.println("You cannot go north");
+                    }
+
+                    break;
                 case "East":
-
-
+                    System.out.println("Going East");
+                adventure.goEast();
+                    break;
                 case "South":
                     System.out.println("Going south");
+                    adventure.goSouth();
+                    break;
                 case "West":
                     System.out.println("Going west");
+                    adventure.goWest();
+                    break;
                 case "Look":
                     System.out.println(adventure.look());
+                    adventure.look();
+                    break;
                 case "End game":
                     player = false;
+                    break;
                 default:
                     System.out.println("Try again");
                     System.out.println("""
@@ -56,6 +70,7 @@ public class Userinterface {
                             Tap - 'West'
                             Tap - 'Look'
                             9. End Game""");
+                    break;
 
             }
         }
@@ -71,7 +86,7 @@ public class Userinterface {
                     System.out.println("You can go north");
                     System.out.println(adventure.getCurrentRoom());
                 } else {
-                    System.out.println("You can go north");
+                    System.out.println("You cannot go north");
                 }
 
             } else if (input.equalsIgnoreCase("Go south")) {
@@ -109,7 +124,7 @@ public class Userinterface {
                 System.out.println("Looking");
 
                 System.out.println(room.getRoomName());
-                System.out.println(room.getRoomOption());
+                System.out.println(room.getRoomDescription());
 
             } else {
                 System.out.println("You cannot write that");

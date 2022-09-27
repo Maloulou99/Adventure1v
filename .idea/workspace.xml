@@ -7,9 +7,9 @@
     <list default="true" id="605caa90-3ed1-4f6a-8feb-e99a5819d211" name="Changes" comment="Test UI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Adventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Adventure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Userinterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Userinterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Adventure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Adventure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Room.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Userinterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Userinterface.class" afterDir="false" />
     </list>
@@ -26,6 +26,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -66,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664197647564</updated>
-      <workItem from="1664197649406" duration="20744000" />
+      <workItem from="1664197649406" duration="23971000" />
     </task>
     <task id="LOCAL-00001" summary="Startprogram er fixet">
       <created>1664204019203</created>
@@ -145,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664282310828</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Test UI">
+      <created>1664287362934</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1664287362934</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,5 +180,16 @@
     <MESSAGE value="Run test" />
     <MESSAGE value="Test UI" />
     <option name="LAST_COMMIT_MESSAGE" value="Test UI" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Userinterface.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

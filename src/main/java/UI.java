@@ -2,20 +2,24 @@ import java.util.Scanner;
 
     public class UI {
 
-        Scanner scanner = new Scanner(System.in);
+        private Scanner scanner = new Scanner(System.in);
 
         public int getScanInt(String errorMessage) {
             while (!scanner.hasNextInt()) {
                 System.out.println(errorMessage);
                 scanner.next();
             }
+            return readInt();
+        }
+
+        public int readInt(){
             int readInt = scanner.nextInt();
             scanner.nextLine();
             return readInt;
         }
 
         public int getScanInt() {
-            return this.getScanInt("Value is not allowed, try again ");
+            return getScanInt("Value is not allowed, try again ");
         }
 
         public String getScanString() {

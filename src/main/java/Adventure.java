@@ -3,8 +3,7 @@ public class Adventure {
     private Room currentRoom;
 
 
-
-   public void mapGame() {
+    public Adventure() {
         Room room1 = new Room("Room 1", "room with no distinct features, except two doors");
         Room room2 = new Room("Room 2", "room that has a lot things lying around, only one other door");
         Room room3 = new Room("Room 3", "room with a lot a skeletons and an old axe, and only one other door");
@@ -16,28 +15,35 @@ public class Adventure {
         Room room9 = new Room("Room 9", "room with a minotaurus that are the strongest creature, fight it or flee too the door");
 
 
+        room1.setRoomEast(room2);
+        room1.setRoomSouth(room4);
 
-        //TODO kig billede igennem og ret
-        room1.setRooms(room2, room4, null, null);
-        room2.setRooms(room1, room3, null, null);
-        room3.setRooms(room2, room4, null, null);
-        room4.setRooms(room1, room7, null, null);
-        room5.setRooms(room8, null, null, null);
-        room6.setRooms(room3, room9, null, null);
-        room7.setRooms(room4, room8, null, null);
-        room8.setRooms(room5, room7, room9, null);
-        room9.setRooms(room6, room8, null, null);
+        room2.setRoomWest(room1);
+        room2.setRoomEast(room3);
+
+        room3.setRoomWest(room2);
+        room3.setRoomSouth(room6);
+
+        room4.setRoomNorth(room1);
+        room4.setRoomSouth(room7);
+
+        room5.setRoomSouth(room8);
+
+        room6.setRoomNorth(room3);
+        room6.setRoomSouth(room9);
+
+        room7.setRoomNorth(room4);
+        room7.setRoomEast(room8);
+
+        room8.setRoomWest(room7);
+        room8.setRoomEast(room9);
+
+        room9.setRoomNorth(room6);
+        room9.setRoomWest(room8);
 
 
-        //TODO ændre til uden hardcode....
         this.currentRoom = room1;
-        /*this.currentRoom = room3;
-        this.currentRoom = room4;
-        this.currentRoom = room5;
-        this.currentRoom = room6;
-        this.currentRoom = room7;
-        this.currentRoom = room8;
-        this.currentRoom = room9;*/
+
     }
 
     //Tilføj rummene med output til bruger
@@ -55,7 +61,7 @@ public class Adventure {
             return false;
         } else {
             currentRoom = currentRoom.getRoomSouth();
-            return  true;
+            return true;
         }
     }
 
@@ -78,10 +84,11 @@ public class Adventure {
     }
 
     public String look() {
-        return currentRoom.getRoomOption();
+        return currentRoom.getRoomDescription();
     }
-public Room getCurrentRoom(){
-       return currentRoom;
-}
+
+    public Room getCurrentRoom() {
+        return currentRoom;
+    }
 
 }
