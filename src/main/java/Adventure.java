@@ -43,7 +43,6 @@ public class Adventure {
     //Tilføj rummene med output til bruger
     public boolean goNorth() {
         if (currentRoom.getRoomNorth() == null) {
-            /*System.out.println("You cannot go north");*/
             return false;
         } else {
             currentRoom = currentRoom.getRoomNorth();
