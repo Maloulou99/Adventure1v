@@ -12,8 +12,8 @@ public class Room {
         this.roomOption = roomOption;
     }
 
-    public void setRooms(Room roomNoth, Room roomSouth, Room roomEast, Room roomWest) {
-        this.roomNorth = roomNoth;
+    public void setRooms(Room roomNorth, Room roomSouth, Room roomEast, Room roomWest) {
+        this.roomNorth = roomNorth;
         this.roomSouth = roomSouth;
         this.roomEast = roomEast;
         this.roomWest = roomWest;
