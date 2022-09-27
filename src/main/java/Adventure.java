@@ -1,21 +1,24 @@
 public class Adventure {
 
-    Room currentRoom;
-    Room room1;
-    Room room2;
-    Room room3;
-    Room room4;
-    Room room5;
-    Room room6;
-    Room room7;
-    Room room8;
-    Room room9;
 
     public Adventure() {
+
+
+        Room currentRoom = new Room();
+        Room room1 = room1 = new Room("Room 1", "room with no distinct features, except two doors");
+        Room room2 = room2 = new Room("Room 2", "room that has a lot things lying around, only one other door");
+        Room room3 = room3 = new Room("Room 3", "room with a lot a skeletons and an old axe, and only one other door");
+        Room room4 = room4 = new Room("Room 4", "room with a giant ready to kill you, fight or run too the door");
+        Room room5 = room5 = new Room("Room 5", "room with a bag of gold lying on the ground, there are no other doors to go through");
+        Room room6 = room6 = new Room("Room 6", "room that has a shield hanging at the wall, take it or proceed to the next room");
+        Room room7 = room7 = new Room("Room 7", "room that has pictures of Kings and Queens, only one door\"");
+        Room room8 = room8 = new Room("Room 8", "room with two doors, what could they lead too?");
+        Room room9 = room9 = new Room("Room 9", "room with a minotaurus that are the strongest creature, fight it or flee too the door");
+
+
     }
 
-
-    public void mapGame() {
+   /* public void mapGame() {
         room1 = new Room("Room 1", "room with no distinct features, except two doors");
         room2 = new Room("Room 2", "room that has a lot things lying around, only one other door");
         room3 = new Room("Room 3", "room with a lot a skeletons and an old axe, and only one other door");
@@ -24,8 +27,7 @@ public class Adventure {
         room6 = new Room("Room 6", "room that has a shield hanging at the wall, take it or proceed to the next room");
         room7 = new Room("Room 7", "room that has pictures of Kings and Queens, only one door\"");
         room8 = new Room("Room 8", "room with two doors, what could they lead too?");
-        room9 = new Room("Room 9", "room with a minotaurus that are the strongest creature, fight it or flee too the door");
-
+        room9 = new Room("Room 9", "room with a minotaurus that are the strongest creature, fight it or flee too the door");*/
 
 
         //TODO kig billede igennem og ret
