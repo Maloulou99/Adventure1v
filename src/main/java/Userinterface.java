@@ -12,12 +12,12 @@ public class Userinterface {
     public void startProgram() {
         System.out.println("""
                 Hi, Welcome to the adventure game let's play!
-                Tap - 'North'
-                Tap - 'East'
-                Tap - 'South'
-                Tap - 'West'
+                Tap - 'Go North'
+                Tap - 'Go East'
+                Tap - 'Go South'
+                Tap - 'Go West'
                 Tap - 'Look'
-                9. End Game""");//TODO skal lave en case 'end game'
+                Tap - 'End Game'""");
 
 
         input = ui.getScanString(); //String som giver errormessage, hvis bruger skriver en anden karakter
@@ -31,31 +31,45 @@ public class Userinterface {
             input = ui.getScanString();
             switch (input) {
                 case "North":
-
-                boolean isPossible = adventure.goNorth();
-                    if (isPossible) {
-                        System.out.println("You can go north");
+                    boolean isNorth = adventure.goNorth();
+                    if (isNorth) {
+                        System.out.println("Going north");
                         System.out.println(adventure.getCurrentRoom());
                     } else {
                         System.out.println("You cannot go north");
                     }
-
                     break;
                 case "East":
-                    System.out.println("Going East");
-                adventure.goEast();
+                    boolean isEast = adventure.goEast();
+                    if (isEast){
+                        System.out.println("Going East");
+                        System.out.println(adventure.getCurrentRoom());
+                    } else {
+                        System.out.println("You cannot go east");
+                    }
                     break;
                 case "South":
-                    System.out.println("Going south");
-                    adventure.goSouth();
+                    boolean isSouth = adventure.goSouth();
+                    if (isSouth) {
+                        System.out.println("Going south");
+                        System.out.println(adventure.getCurrentRoom());
+                    } else {
+                        System.out.println("You cannot go south");
+                    }
                     break;
                 case "West":
-                    System.out.println("Going west");
-                    adventure.goWest();
+                   boolean isWest = adventure.goWest();
+                    if (isWest) {
+                        System.out.println("Going west");
+                        System.out.println(adventure.getCurrentRoom());
+                    } else {
+                        System.out.println("You cannot go west");
+                    }
                     break;
                 case "Look":
                     System.out.println(adventure.look());
                     adventure.look();
+                    System.out.println("Looking");
                     break;
                 case "End game":
                     player = false;
@@ -63,20 +77,19 @@ public class Userinterface {
                 default:
                     System.out.println("Try again");
                     System.out.println("""
-                            Hi, Welcome to the adventure game let's play!
-                            Tap - 'North'
-                            Tap - 'East'
-                            Tap - 'South'
-                            Tap - 'West'
+                            Tap - 'Go North'
+                            Tap - 'Go East'
+                            Tap - 'Go South'
+                            Tap - 'Go West'
                             Tap - 'Look'
-                            9. End Game""");
+                            Tap - 'End Game'""");
                     break;
 
             }
         }
     }
 
-    public void run() {
+    /*public void run() {
 
         System.out.println("Welcome to the Adventure Game");
         while (true) {
@@ -130,7 +143,7 @@ public class Userinterface {
                 System.out.println("You cannot write that");
             }
         }
-    }
+    }*/
 }
 
 
