@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="605caa90-3ed1-4f6a-8feb-e99a5819d211" name="Changes" comment="Option ændret test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Adventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Adventure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Room.java" afterDir="false" />
+    <list default="true" id="605caa90-3ed1-4f6a-8feb-e99a5819d211" name="Changes" comment="Run test">
       <change beforePath="$PROJECT_DIR$/src/main/java/Userinterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Userinterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +46,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664197647564</updated>
-      <workItem from="1664197649406" duration="14607000" />
+      <workItem from="1664197649406" duration="15976000" />
     </task>
     <task id="LOCAL-00001" summary="Startprogram er fixet">
       <created>1664204019203</created>
@@ -100,7 +97,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664278807363</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary=" test">
+      <created>1664279992216</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664279992216</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Run test">
+      <created>1664280918457</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1664280918457</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +134,8 @@
     <MESSAGE value="Aflevering 1" />
     <MESSAGE value="Option ændret" />
     <MESSAGE value="Option ændret test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Option ændret test" />
+    <MESSAGE value=" test" />
+    <MESSAGE value="Run test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Run test" />
   </component>
 </project>

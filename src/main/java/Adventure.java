@@ -41,37 +41,42 @@ public class Adventure {
     }
 
     //Tilføj rummene med output til bruger
-    public void goNorth() {
+    public boolean goNorth() {
         if (currentRoom.getRoomNorth() == null) {
-            System.out.println("You cannot go north");
+            /*System.out.println("You cannot go north");*/
+            return false;
         } else {
             currentRoom = currentRoom.getRoomNorth();
+            return true;
         }
     }
 
     public boolean goSouth() {
         if (currentRoom.getRoomSouth() == null) {
             return false;
-            /*System.out.println("You cannot go south");*/
         } else {
             currentRoom = currentRoom.getRoomSouth();
             return  true;
         }
     }
 
-    public void goEast() {
+    public boolean goEast() {
         if (currentRoom.getRoomEast() == null) {
-            System.out.println("You cannot go east");
+            /*System.out.println("You cannot go east");*/
+            return false;
         } else {
             currentRoom = currentRoom.getRoomEast();
+            return true;
         }
     }
 
-    public void goWest() {
+    public boolean goWest() {
         if (currentRoom.getRoomWest() == null) {
-            System.out.println("You cannot go west");
+            /*System.out.println("You cannot go west");*/
+            return false;
         } else {
             currentRoom = currentRoom.getRoomWest();
+            return true;
         }
     }
 
