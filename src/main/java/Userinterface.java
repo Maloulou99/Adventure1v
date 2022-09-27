@@ -1,14 +1,11 @@
 public class Userinterface {
     private Adventure adventure;
-    private Room room;
     private UI ui = new UI();
     String input;
 
     public Userinterface(Adventure adventure) {
         this.adventure = adventure;
     }
-
-
     public void startProgram() {
         System.out.println("""
                 Hi, Welcome to the adventure game let's play!
@@ -20,12 +17,12 @@ public class Userinterface {
                 Tap - 'End Game'""");
 
 
-        input = ui.getScanString(); //String som giver errormessage, hvis bruger skriver en anden karakter
+        //input = ui.getScanString(); //String som giver errormessage, hvis bruger skriver en anden karakter
         command(input);
     }
 
     private void command(String input) {
-        System.out.println("Select an option ");
+        System.out.println(ui.BLACK_BOLD_BRIGHT + "Select an option: ");
         boolean player = true;
         while (player) {
             input = ui.getScanString();
