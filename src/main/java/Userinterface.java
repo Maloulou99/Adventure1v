@@ -51,17 +51,31 @@ public class Userinterface {
             while (true) {
                 String choice = ui.getScanString();
                 if (choice.equalsIgnoreCase("Go north")) {
-                    System.out.println("Going north");
+                    if (adventure.goNorth() == true){
+                    System.out.println("You cannot go north");
+                        System.out.println(adventure.getCurrentRoom());}
+
                 } else if (choice.equalsIgnoreCase("Go south")) {
                     if (adventure.goSouth() == true){
                     System.out.println("You can go south");
                     System.out.println(adventure.getCurrentRoom());}
                     else{
                         System.out.println("You cannot go south");}
+
                 } else if (choice.equalsIgnoreCase("Go east")) {
-                    System.out.println("Going east");
+                    if(adventure.goEast() == true){
+                        System.out.println("Going east");
+                        System.out.println(adventure.getCurrentRoom());}
+                    else{
+                    System.out.println("You cannot go east");}
+
                 } else if (choice.equalsIgnoreCase("Go west")) {
+                   if(adventure.goWest() == true){
                     System.out.println("Going west");
+                       System.out.println(adventure.getCurrentRoom());}
+                   else{
+                       System.out.println();
+                   }
                 } else if (choice.equalsIgnoreCase("Exit")) {
                     System.out.println("Exiting Thanks for playing");
                     System.exit(0);
