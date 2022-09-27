@@ -61,7 +61,6 @@ public class Adventure {
 
     public boolean goEast() {
         if (currentRoom.getRoomEast() == null) {
-            /*System.out.println("You cannot go east");*/
             return false;
         } else {
             currentRoom = currentRoom.getRoomEast();
@@ -71,7 +70,6 @@ public class Adventure {
 
     public boolean goWest() {
         if (currentRoom.getRoomWest() == null) {
-            /*System.out.println("You cannot go west");*/
             return false;
         } else {
             currentRoom = currentRoom.getRoomWest();
