@@ -1,85 +1,54 @@
 public class Map {
 
-    private Room currentRoom;
+
     private Adventure adventure;
-
+    private Room starterRoom;
     public Map() {
+        Room room1 = new Room("Room 1", "room with no distinct features, except two doors");
+        Room room2 = new Room("Room 2", "room that has a lot things lying around, only one other door");
+        Room room3 = new Room("Room 3", "room with a lot a skeletons and an old axe, and only one other door");
+        Room room4 = new Room("Room 4", "room with a giant ready to kill you, fight or run too the door");
+        Room room5 = new Room("Room 5", "room with a bag of gold lying on the ground, there are no other doors to go through");
+        Room room6 = new Room("Room 6", "room that has a shield hanging at the wall, take it or proceed to the next room");
+        Room room7 = new Room("Room 7", "room that has pictures of Kings and Queens, only one door\"");
+        Room room8 = new Room("Room 8", "room with two doors, what could they lead too?");
+        Room room9 = new Room("Room 9", "room with a minotaurus that are the strongest creature, fight it or flee too the door");
 
-        adventure.room1.setRoomEast(adventure.room2);
-        adventure.room1.setRoomSouth(adventure.room4);
+        room1.setRoomEast(room2);
+        room1.setRoomSouth(room4);
 
-        adventure.room2.setRoomWest(adventure.room1);
-        adventure.room2.setRoomEast(adventure.room3);
+        room2.setRoomWest(room1);
+        room2.setRoomEast(room3);
 
-        adventure.room3.setRoomWest(adventure.room2);
-        adventure.room3.setRoomSouth(adventure.room6);
+        room3.setRoomWest(room2);
+        room3.setRoomSouth(room6);
 
-        adventure.room4.setRoomNorth(adventure.room1);
-        adventure.room4.setRoomSouth(adventure.room7);
+        room4.setRoomNorth(room1);
+        room4.setRoomSouth(room7);
 
-        adventure.room5.setRoomSouth(adventure.room8);
+        room5.setRoomSouth(room8);
 
-        adventure.room6.setRoomNorth(adventure.room3);
-        adventure.room6.setRoomSouth(adventure.room9);
+        room6.setRoomNorth(room3);
+        room6.setRoomSouth(room9);
 
-        adventure.room7.setRoomNorth(adventure.room4);
-        adventure.room7.setRoomEast(adventure.room8);
+        room7.setRoomNorth(room4);
+        room7.setRoomEast(room8);
 
-        adventure.room8.setRoomWest(adventure.room7);
-        adventure.room8.setRoomEast(adventure.room9);
+        room8.setRoomWest(room7);
+        room8.setRoomEast(room9);
 
-        adventure.room9.setRoomNorth(adventure.room6);
-        adventure.room9.setRoomWest(adventure.room8);
+        room9.setRoomNorth(room6);
+        room9.setRoomWest(room8);
 
 
-        this.currentRoom = adventure.room1;
+        this.starterRoom = room1;
 
     }
 
-    //Tilføj rummene med output til bruger
-    public boolean goNorth() {
-        if (currentRoom.getRoomNorth() == null) {
-            return false;
-        } else {
-            currentRoom = currentRoom.getRoomNorth();
-            return true;
-        }
-    }
+public Room getStarterRoom(){
+        return starterRoom;
+}
 
-    public boolean goSouth() {
-        if (currentRoom.getRoomSouth() == null) {
-            return false;
-        } else {
-            currentRoom = currentRoom.getRoomSouth();
-            return true;
-        }
-    }
-
-    public boolean goEast() {
-        if (currentRoom.getRoomEast() == null) {
-            return false;
-        } else {
-            currentRoom = currentRoom.getRoomEast();
-            return true;
-        }
-    }
-
-    public boolean goWest() {
-        if (currentRoom.getRoomWest() == null) {
-            return false;
-        } else {
-            currentRoom = currentRoom.getRoomWest();
-            return true;
-        }
-    }
-
-    public String look() {
-        return currentRoom.getRoomName() + currentRoom.getRoomDescription();
-    }
-
-    public Room getCurrentRoom() {
-        return currentRoom;
-    }
 
 }
 

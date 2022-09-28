@@ -1,14 +1,15 @@
 public class Userinterface {
-    private Map map;
     private UI ui = new UI();
     private Adventure adventure;
-    String input;
+
 
     public Userinterface(Adventure adventure) {
         this.adventure = adventure;
     }
 
     public void startProgram() {
+        System.out.println("Choice a player name");
+        adventure.getPlayer().setName(ui.getScanString());
         System.out.println("""
                 Hi, Welcome to the adventure game let's play!
                 Tap - 'Go North'
@@ -20,54 +21,56 @@ public class Userinterface {
 
 
         //input = ui.getScanString(); //String som giver errormessage, hvis bruger skriver en anden karakter
-        command(input);
+        command();
     }
 
-    private void command(String input) {
+    private void command() {
+
         System.out.println(ui.BLACK_BOLD_BRIGHT + "Select an option: ");
+
         boolean player = true;
         while (player) {
-            input = ui.getScanString();
+            String input = ui.getScanString();
             switch (input) {
                 case "North":
-                    boolean isNorth = map.goNorth();
+                    boolean isNorth = adventure.goNorth();
                     if (isNorth) {
                         System.out.println("Going north");
-                        System.out.println(map.getCurrentRoom());
+                        System.out.println(adventure.getPlayer().getCurrentRoom());
                     } else {
                         System.out.println("You cannot go north");
                     }
                     break;
                 case "East":
-                    boolean isEast = map.goEast();
+                    boolean isEast = adventure.goEast();
                     if (isEast){
                         System.out.println("Going East");
-                        System.out.println(map.getCurrentRoom());
+                        System.out.println(adventure.getPlayer().getCurrentRoom());
                     } else {
                         System.out.println("You cannot go east");
                     }
                     break;
                 case "South":
-                    boolean isSouth = map.goSouth();
+                    boolean isSouth = adventure.goSouth();
                     if (isSouth) {
                         System.out.println("Going south");
-                        System.out.println(map.getCurrentRoom());
+                        System.out.println(adventure.getPlayer().getCurrentRoom());
                     } else {
                         System.out.println("You cannot go south");
                     }
                     break;
                 case "West":
-                   boolean isWest = map.goWest();
+                   boolean isWest = adventure.goWest();
                     if (isWest) {
                         System.out.println("Going west");
-                        System.out.println(map.getCurrentRoom());
+                        System.out.println(adventure.getPlayer().getCurrentRoom());
                     } else {
                         System.out.println("You cannot go west");
                     }
                     break;
                 case "Look":
-                    System.out.println(map.look());
-                    map.look();
+                    System.out.println(adventure.getPlayer().look());
+                    adventure.getPlayer().look();
                     System.out.println("Looking");
                     break;
                 case "End game":
