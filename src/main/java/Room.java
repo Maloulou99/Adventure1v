@@ -12,12 +12,6 @@ public class Room {
         this.roomDescription = roomOption;
     }
 
-    /*public void setRooms(Room roomNorth, Room roomSouth, Room roomEast, Room roomWest) {
-        this.roomNorth = roomNorth;
-        this.roomSouth = roomSouth;
-        this.roomEast = roomEast;
-        this.roomWest = roomWest;
-    }*/
     public void setRoomNorth(Room roomNorth){
         this.roomNorth = roomNorth;
     }
