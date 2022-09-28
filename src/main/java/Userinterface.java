@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Userinterface {
     private UI ui = new UI();
     private Adventure adventure;
@@ -32,7 +34,7 @@ public class Userinterface {
         while (player) {
             String input = ui.getScanString();
             switch (input) {
-                case "North":
+                case "Go North":
                     boolean isNorth = adventure.goNorth();
                     if (isNorth) {
                         System.out.println("Going north");
