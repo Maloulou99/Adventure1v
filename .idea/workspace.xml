@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="605caa90-3ed1-4f6a-8feb-e99a5819d211" name="Changes" comment="Aflevering del 1 - Rettet klasser">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Userinterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Userinterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Userinterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Userinterface.class" afterDir="false" />
-    </list>
+    <list default="true" id="605caa90-3ed1-4f6a-8feb-e99a5819d211" name="Changes" comment="Små rettelser" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664197647564</updated>
-      <workItem from="1664197649406" duration="43251000" />
+      <workItem from="1664197649406" duration="43850000" />
     </task>
     <task id="LOCAL-00001" summary="Startprogram er fixet">
       <created>1664204019203</created>
@@ -191,7 +187,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664363521145</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="UML Diagram">
+      <created>1664373062922</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1664373062922</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Små rettelser">
+      <created>1664373482900</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1664373482900</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +231,8 @@
     <MESSAGE value="Aflevering 1 - Spil kører" />
     <MESSAGE value="Aflevering del 1 - Ny klasse" />
     <MESSAGE value="Aflevering del 1 - Rettet klasser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aflevering del 1 - Rettet klasser" />
+    <MESSAGE value="UML Diagram" />
+    <MESSAGE value="Små rettelser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Små rettelser" />
   </component>
 </project>
