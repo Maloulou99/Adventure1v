@@ -22,6 +22,11 @@ public class Room {
         itemList.add(item);
     }
 
+    public void showItems(){
+        System.out.println(itemList.toString());
+
+    }
+
     public void setRoomNorth(Room roomNorth){
         this.roomNorth = roomNorth;
     }
