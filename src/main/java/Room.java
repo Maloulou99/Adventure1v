@@ -7,13 +7,19 @@ public class Room {
     private Room roomSouth;
     private Room roomEast;
     private Room roomWest;
-    private ArrayList<Item> itemList = new ArrayList();
+    private ArrayList<Item> itemList;
 
     //Konstruktør
     public Room(String roomName, String roomOption) {
         this.roomName = roomName;
         this.roomDescription = roomOption;
+        itemList = new ArrayList<>();
 
+    }
+
+    public void addItem(String name){
+         Item item = new Item(name);
+        itemList.add(item);
     }
 
     public void setRoomNorth(Room roomNorth){
