@@ -3,6 +3,7 @@ public class Map {
 
     private Adventure adventure;
     private Room starterRoom;
+
     public Map() {
         Room room1 = new Room("Room 1", "room with no distinct features, except two doors");
         Room room2 = new Room("Room 2", "room that has a lot things lying around, only one other door");
@@ -45,9 +46,9 @@ public class Map {
 
     }
 
-public Room getStarterRoom(){
+    public Room getStarterRoom() {
         return starterRoom;
-}
+    }
 
 
 }

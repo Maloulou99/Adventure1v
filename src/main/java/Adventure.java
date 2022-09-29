@@ -49,4 +49,6 @@ public class Adventure {
     public Player getPlayer() {
         return player;
     }
+
+
 }
