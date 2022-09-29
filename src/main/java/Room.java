@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Room {
     private String roomName;
     private String roomDescription;
@@ -5,11 +7,13 @@ public class Room {
     private Room roomSouth;
     private Room roomEast;
     private Room roomWest;
+    private ArrayList<Item> itemList = new ArrayList();
 
     //Konstruktør
     public Room(String roomName, String roomOption) {
         this.roomName = roomName;
         this.roomDescription = roomOption;
+
     }
 
     public void setRoomNorth(Room roomNorth){
