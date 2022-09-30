@@ -40,13 +40,14 @@ public class Room {
     public void removeItem(Item item, Room currentRoom) {
         currentRoom.getItem().remove(item);
     }
-    public void takeItem(String itemName, Room currentRoom){
+    public Item takeItem(String itemName, Room currentRoom){
         Item item = findItem(itemName, currentRoom);
         if(item == null){
         currentRoom.noItem(itemName);
         }else{
            removeItem(item, currentRoom);
         }
+        return item;
     }
     public void seeItem(ArrayList<Item> item) {
         System.out.println(item.toString());

@@ -22,6 +22,12 @@ public class Player {
         return currentRoom.getRoomName() + " " + currentRoom.getRoomDescription() + " " +
                 currentRoom.getItemName() + " " + currentRoom.getItemDescription();
     }
+    public Item findItem(String name){
+        for (Item item : this.inventory){
+            if(item.getItemName().equalsIgnoreCase(name));
+            return item;
+        } return null;
+    }
 
     public Room getCurrentRoom(){
         return currentRoom;
@@ -37,4 +43,8 @@ public class Player {
     public void setName(String name) {
         this.name = name;
     }
+    public ArrayList<Item> getInventory() {
+        return inventory;
+    }
+
 }

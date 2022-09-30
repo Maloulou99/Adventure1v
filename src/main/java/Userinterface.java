@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Userinterface {
     private Extra extra = new Extra();
     private Adventure adventure;
@@ -86,8 +88,16 @@ public class Userinterface {
                             Tap - 'Go West' or "w" to go west
                             Tap - 'Look' or "l" to looking
                             Tap - 'End Game' or "End to end the game"""));
+                    break;
                 case "Inventory", "i":
-
+                    System.out.println(adventure.getPlayer().getInventory());
+                    break;
+                case "Take", "t":
+                    adventure.getPlayer().getCurrentRoom().takeItem(extra.getScanString(), adventure.getPlayer().getCurrentRoom());
+                    break;
+                case "Drop", "d":
+                    adventure.getPlayer().getInventory().remove(adventure.getPlayer().findItem(extra.getScanString()));
+                    break;
                 case "End game", "end":
                     player = false;
                     break;
