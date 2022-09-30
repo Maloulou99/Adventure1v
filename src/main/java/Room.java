@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 
 public class Room {
-    private String name;
-    private String description;
+    private String roomName;
+    private String roomDescription;
+    private String itemName;
+    private String itemDescription;
     private Room roomNorth;
     private Room roomSouth;
     private Room roomEast;
@@ -13,9 +15,12 @@ public class Room {
     //Arrayliste til brug til Item Klassen
     //Konstruktør
     public Room(String Name, String description) {
-        this.name = Name;
-        this.description = description;
+        this.roomName = Name;
+        this.roomDescription = description;
         item = new ArrayList<>();
+    }
+    public Room(){
+
     }
 
     //Metoder som bruges i Arraylisten til Item
@@ -35,10 +40,10 @@ public class Room {
     public void removeItem(Item item, Room currentRoom) {
         currentRoom.getItem().remove(item);
     }
-    public void takeItem(String name, Room currentRoom){
-        Item item = findItem(name, currentRoom);
+    public void takeItem(String itemName, Room currentRoom){
+        Item item = findItem(itemName, currentRoom);
         if(item == null){
-        currentRoom.noItem(name);
+        currentRoom.noItem(itemName);
         }else{
            removeItem(item, currentRoom);
         }
@@ -89,16 +94,28 @@ public class Room {
         return roomWest;
     }
 
-    public String getDescription() {
-        return description;
+    public String getRoomDescription() {
+        return roomDescription;
     }
 
-    public String getName() {
-        return name;
+    public String getRoomName() {
+        return roomName;
     }
+    public void setRoomName(){
+        this.roomName = roomName;
+    }
+
+    public String getItemDescription() {
+        return itemDescription;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
 
     public String toString() {
-        return name + " " + description;
+        return roomName + " " + roomDescription;
     }
 
 

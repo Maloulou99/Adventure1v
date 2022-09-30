@@ -18,6 +18,9 @@ public class Userinterface {
                 Tap - 'Go West' or "w"
                 Tap - 'Look' or "l"
                 Tap - 'Help' or "h"
+                Tap - 'Inventory' or "i"
+                Tap - 'Take' or "t"
+                Tap - 'Drop' or "d"
                 Tap - 'End Game' or "End""");
 
 
@@ -83,6 +86,8 @@ public class Userinterface {
                             Tap - 'Go West' or "w" to go west
                             Tap - 'Look' or "l" to looking
                             Tap - 'End Game' or "End to end the game"""));
+                case "Inventory", "i":
+
                 case "End game", "end":
                     player = false;
                     break;

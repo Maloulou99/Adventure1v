@@ -1,10 +1,14 @@
+import java.util.Scanner;
+
 public class Adventure {
 
     private Player player;
     private Map map = new Map();
 
     public Adventure() {
-        player = new Player();
+        Scanner sc = new Scanner(System.in);
+
+        player = new Player(map.getStarterRoom());
         player.setCurrentRoom(map.getStarterRoom());
     }
 

@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="605caa90-3ed1-4f6a-8feb-e99a5819d211" name="Changes" comment="UML Diagram">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Item.java" afterDir="false" />
+    <list default="true" id="605caa90-3ed1-4f6a-8feb-e99a5819d211" name="Changes" comment="Aflevering 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Adventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Adventure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Extra.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Userinterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Userinterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +65,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664197647564</updated>
-      <workItem from="1664197649406" duration="49821000" />
+      <workItem from="1664197649406" duration="50267000" />
+      <workItem from="1664519214787" duration="11007000" />
     </task>
     <task id="LOCAL-00001" summary="Startprogram er fixet">
       <created>1664204019203</created>
@@ -217,7 +215,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664389603259</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Meget rodet, Room har alle metoder for item nu....">
+      <created>1664489811902</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1664489811902</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Aflevering 2">
+      <created>1664534188829</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1664534188829</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +261,8 @@
     <MESSAGE value="Aflevering del 1 - Rettet klasser" />
     <MESSAGE value="Små rettelser" />
     <MESSAGE value="UML Diagram" />
-    <option name="LAST_COMMIT_MESSAGE" value="UML Diagram" />
+    <MESSAGE value="Meget rodet, Room har alle metoder for item nu...." />
+    <MESSAGE value="Aflevering 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aflevering 2" />
   </component>
 </project>
