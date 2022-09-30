@@ -127,7 +127,7 @@ public class Userinterface {
                     System.out.println("Going east");
                     System.out.println(adventure.getCurrentRoom());
                 } else {
-                    System.out.println("You cannot go east");
+                    Syst    em.out.println("You cannot go east");
                 }
 
             } else if (input.equalsIgnoreCase("Go west")) {

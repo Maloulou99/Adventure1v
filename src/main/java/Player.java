@@ -4,7 +4,7 @@ public class Player {
     private String name;
 
     public String look() {
-        return currentRoom.getName() + currentRoom.getDescription();
+        return currentRoom.getItemName() + currentRoom.getItemDescription();
     }
 
     public Room getCurrentRoom(){
