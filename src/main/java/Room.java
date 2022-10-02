@@ -23,7 +23,8 @@ public class Room {
 
     }
 
-    //Metoder som bruges i Arraylisten til Item
+    //Konstruktør som benyttes til Item, så vi kan lave forskellige metoder til Item
+    //TODO jeg skal have kigget på show item, da item objekt ikke har en liste til at kunne finde en item i currentroom
     public void addItem(String itemName, String itemDescription) {
         Item weapon = new Item(itemName, itemDescription);
         item.add(weapon);
@@ -34,6 +35,7 @@ public class Room {
             return item;
         } return null;
     }
+    //TODO jeg skal have ryket denne til UI klassen , da et kriterie er at man ikke må have sout i andre klasser
     public void noItem(String name){
         System.out.println("Your choice does not exist " + name);
     }
