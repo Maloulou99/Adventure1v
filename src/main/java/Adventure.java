@@ -10,25 +10,27 @@ public class Adventure {
         player = new Player(map.getStarterRoom());
         map.getStarterRoom();
     }
+    public int getPlayerHealth(){
+        return player.getPlayerHealth();
+    }
 
-    public void takeItem(String itemName) {
-        player.takeItem(itemName);
+    public boolean take(String takeThis) {
+       return player.takeItem(takeThis);
     }
 
     public void getItem(String searchItem) {
         player.searchItem(searchItem);
     }
 
-    public void dropItem(String dropItem){
-        player.dropItem(dropItem);
+    public boolean dropItem(String itemName){
+        return player.dropItem(itemName);
     }
     public String look() {
        return player.look();
     }
 
-    public boolean getCurrentRoom() {
-        player.getCurrentRoom();
-        return getCurrentRoom();
+    public Room getCurrentRoom() {
+        return player.getCurrentRoom();
     }
 
     public ArrayList<Item> getInventory() {
@@ -38,22 +40,13 @@ public class Adventure {
     public void setName(String setName) {
         player.setName(setName);
     }
-
-    public boolean goNorth(){
-        return player.goNorth();
-    }
-    public boolean goSouth(){
-        return player.goSouth();
-    }
-    public boolean goEast(){
-        return player.goEast();
-    }
-    public boolean goWest(){
-        return player.goWest();
+    public boolean go(String direction){
+        return player.move(direction.charAt(0));
     }
 
-//
     public String getRoomName() {
         return player.getRoomName();
     }
+
+
 }

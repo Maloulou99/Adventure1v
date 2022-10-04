@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Userinterface {
     private Extra extra = new Extra();
     private Adventure adventure;
@@ -35,45 +33,52 @@ public class Userinterface {
         boolean player = true;
         while (player) {
             String input = extra.getScanString();
-            switch (input) {
-                case "Go north", "n":
-                    boolean isNorth = adventure.goNorth();
-                    if (isNorth) {
-                        System.out.println("Going north");
-                        isPossible = adventure.goNorth();
-                        checkIsPossible(isPossible);
+            String [] userInputs = input.split(" ");
+            String command = userInputs[0];
+            String userChoice = "";
+            if(userInputs.length > 1){
+                userChoice = userInputs[1];
+            }
+            switch (command) {
+                case "go":
+                    boolean succesGo = adventure.go(userChoice);
+                    if(succesGo){
+                        System.out.println("You have gone " + userChoice);
+                    } else{
+                        System.out.println("You can't go that way");
                     }
                     break;
-                case "Go east", "e":
-                    boolean isEast = adventure.goEast();
-                    if (isEast) {
-                        System.out.println("Going East");
-                        isPossible = adventure.goEast();
-                        checkIsPossible(isPossible);
+                case "take":
+                    boolean succesTake = adventure.take(userChoice);
+                    if(succesTake){
+                        System.out.println("You have taken " + userChoice);
+                    } else{
+                        System.out.println("You can't take this item");
                     }
                     break;
-                case "Go south", "s":
-                    boolean isSouth = adventure.goSouth();
-                    if (isSouth) {
-                        System.out.println("Going south");
-                        isPossible = adventure.goSouth();
-                        checkIsPossible(isPossible);
+                case "look", "l":
+                    System.out.println("Looking ");
+                    //System.out.println(adventure.look());
+                    System.out.println(adventure.getCurrentRoom().getItems());
+                    break;
+                case "inventory", "i":
+                    //System.out.println(adventure.getInventory());
+                    for(Item item : adventure.getInventory()){
+                        System.out.println("* " + item.getItemName());
                     }
                     break;
-                case "Go west", "w":
-                   boolean isWest = adventure.goWest();
-                    if (isWest) {
-                        System.out.println("Going west");
-                        isPossible = adventure.goWest();
-                        checkIsPossible(isPossible);
+                case "drop", "d":
+                    boolean succesDrop = adventure.dropItem(userChoice);
+                    if(succesDrop){
+                        System.out.println("You have doped " + userChoice);
+                    } else{
+                        System.out.println("Could't find at item");
                     }
                     break;
-                    //TODO Look, drop, take, inventory virker ikke
-                case "Look", "l":
-                    System.out.println(adventure.look());
-                    System.out.println("Looking");
+                case "health" :
+                    System.out.println(adventure.getPlayerHealth());
                     break;
-                case "Help", "h":
+                case "help", "h":
                     System.out.println(("""
                             You have some choice here:
                             Tap - 'Go North' or "n" to go north
@@ -85,16 +90,6 @@ public class Userinterface {
                             Tap - 'Drop' or 'd' to drop your item
                             Tap - 'Take' or 't' to take a item
                             Tap - 'End Game' or "End to end the game"""));
-                    break;
-                case "Inventory", "i":
-                    System.out.println(adventure.getInventory());
-                    break;
-                case "Take", "t":
-                    //adventure.getPlayer().getCurrentRoom().takeItem(extra.getScanString(), adventure.getPlayer().getCurrentRoom());
-                    adventure.takeItem(extra.getScanString());
-                    break;
-                case "Drop", "d":
-                    adventure.dropItem(extra.getScanString());
                     break;
                 case "End game", "end":
                     player = false;
@@ -127,7 +122,7 @@ public class Userinterface {
 
     public void checkIsPossibleToTakeItem(boolean isPossibleToTakeItem) {
         if (isPossibleToTakeItem) {
-            System.out.println(takeItem + " added to your inventory!");
+            System.out.println(takeItem + " added to your inventory backpack!");
         } else {
             System.out.println("There is no such item to take around here");
         }

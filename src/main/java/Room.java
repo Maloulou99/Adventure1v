@@ -10,41 +10,35 @@ public class Room {
     private Room roomSouth;
     private Room roomEast;
     private Room roomWest;
-    private ArrayList<Item> item;
+    private ArrayList<Item> items;
 
 
     //Arrayliste til brug til Item Klassen
     //Konstruktør
-    public Room(String Name, String description) {
-        this.roomName = Name;
-        this.roomDescription = description;
-        item = new ArrayList<>();
+    public Room(String roomName, String roomDescription) {
+        this.roomName = roomName;
+        this.roomDescription = roomDescription;
+        items = new ArrayList<>();
     }
 
     //Konstruktør som benyttes til Item, så vi kan lave forskellige metoder til Item
     public void addItem(String itemName, String itemDescription) {
         Item itemAdd = new Item(itemName, itemDescription);
-        item.add(itemAdd);
+        items.add(itemAdd);
     }
 
-    public Item getItem(String name) {
-        for (Item item : getItem()) {
+
+    /*public Item getItems(String name) {
+        for (Item item : getItems()) {
             if (item.getItemName().equalsIgnoreCase(name)) ;
         }
         return null;
-    }
+    }*/
 
     public void removeItem(Item item) {
-        getItem().remove(item);
+        getItems().remove(item);
     }
 
-    public Item takeItem() {
-        if (item != null) {
-        } else {
-            return null;
-        }
-        return null;
-    }
 
     public void seeItem(ArrayList<Item> item) {
         System.out.println(item.toString());
@@ -114,7 +108,7 @@ public class Room {
     }
 
 
-    public ArrayList<Item> getItem() {
-        return item;
+    public ArrayList<Item> getItems() {
+        return items;
     }
 }

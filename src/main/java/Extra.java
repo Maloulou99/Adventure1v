@@ -23,7 +23,7 @@ import java.util.Scanner;
         }
 
         public String getScanString() {
-            return scanner.nextLine();
+            return scanner.nextLine().toLowerCase();
         }
 
         // Reset

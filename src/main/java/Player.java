@@ -4,14 +4,16 @@ public class Player {
 
     private Room currentRoom;
     private String name;
+    private int health;
     private ArrayList<Item> inventory;
 
 
     public Player (Room currentRoom){
         this.inventory = new ArrayList<>();
         this.currentRoom = currentRoom;
-        this.name = "";
+        this.health = 100;
     }
+
 
     //Inventory metoder
     public ArrayList<Item> getInventory() {
@@ -30,53 +32,70 @@ public class Player {
     }
 
     public String look() {
-        if (currentRoom.getItem().isEmpty())
+        if (currentRoom.getItems().isEmpty())
             return currentRoom.getRoomDescription();
         else
-            return currentRoom.getItem() + currentRoom.getRoomDescription();
+            return currentRoom.getItems() + currentRoom.getRoomDescription();
 
     }
 
-    public Item searchItem(String name){
+    public Item searchItem(String itemName){
         for (Item item : this.inventory){
-            if(item.getItemName().equalsIgnoreCase(name));
+            if(item.getItemName().equals(itemName));
             return item;
         } return null;
     }
 
     public boolean takeItem(String itemName) {
-        Item take = currentRoom.takeItem();
-        if(take != null){
-            currentRoom.removeItem(take);
-            inventory.add(take);
-            //addItem(take);
-            return true;
-        }else{
-            return false;
+        for(Item item : currentRoom.getItems()){
+            if(item.getItemName().equals(itemName)){
+                inventory.add(item);
+                currentRoom.getItems().remove(item);
+                return true;
+            }
         }
-
+        return false;
     }
 
     public boolean dropItem(String itemName) {
-        Item item = searchItem(itemName);
-        if (item == null) {
-            return false;
-        } else {
-            inventory.remove(item);
-            currentRoom.getItem().add(item);
-            return true;
+        for (Item item : inventory) {
+            if (item.getItemName().equals((itemName))) {
+                currentRoom.getItems().add(item);
+                inventory.remove(item);
+                return true;
+            }
         }
+        return false;
     }
-
 
     public Room getCurrentRoom(){
         return currentRoom;
     }
-    public void setCurrentRoom(Room currentRoom){
-        this.currentRoom = currentRoom;
-    }
 
     //Rummene som bruger kan passere
+
+    public boolean move(char direction){
+        Room requestRoom = null;
+        if(direction == 'n'){
+            requestRoom = currentRoom.getRoomNorth();
+        } else if (direction == 's') {
+            requestRoom = currentRoom.getRoomSouth();
+        } else if (direction == 'e') {
+            requestRoom = currentRoom.getRoomEast();
+        } else if (direction == 'w') {
+            requestRoom = currentRoom.getRoomWest();
+        }
+
+        if(requestRoom != null){
+            currentRoom = requestRoom;
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+
+
     public boolean goNorth() {
         if (currentRoom.getRoomNorth() == null) {
             return false;
@@ -120,4 +139,8 @@ public class Player {
         return currentRoom.getRoomName();
     }
 
+
+    public int getPlayerHealth() {
+        return health;
+    }
 }

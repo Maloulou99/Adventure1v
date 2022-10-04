@@ -4,6 +4,9 @@ public class Item {
 
     private String itemName;
     private String itemDescription;
+    private int health;
+    private String eat;
+
 
 
     public Item(String itemDescription){
@@ -23,6 +26,9 @@ public class Item {
         return itemDescription;
     }
 
+    public String toString(){
+    return getItemName() + getItemDescription();
+    }
 }
 
 
