@@ -80,6 +80,7 @@ public class Userinterface {
                     break;
                 case "eat":
                     System.out.println(adventure.getPlayerEat());
+
                     break;
                 case "help", "h":
                     System.out.println(("""

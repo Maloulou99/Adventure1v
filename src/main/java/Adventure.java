@@ -6,27 +6,22 @@ public class Adventure {
     private Map map = new Map();
 
     public Adventure() {
-
         player = new Player(map.getStarterRoom());
         map.getStarterRoom();
     }
-    public int getPlayerHealth(){
-        return player.getPlayerHealth();
-    }
+
 
     public boolean take(String takeThis) {
-       return player.takeItem(takeThis);
+        return player.takeItem(takeThis);
     }
 
-    public void getItem(String searchItem) {
-        player.searchItem(searchItem);
-    }
 
-    public boolean dropItem(String itemName){
+    public boolean dropItem(String itemName) {
         return player.dropItem(itemName);
     }
+
     public String look() {
-       return player.look();
+        return player.look();
     }
 
     public Room getCurrentRoom() {
@@ -40,7 +35,8 @@ public class Adventure {
     public void setName(String setName) {
         player.setName(setName);
     }
-    public boolean go(String direction){
+
+    public boolean go(String direction) {
         return player.move(direction.charAt(0));
     }
 
@@ -48,7 +44,9 @@ public class Adventure {
         return player.getRoomName();
     }
 
-
+    public int getPlayerHealth(){
+        return player.getPlayerHealth();
+    }
     public String getPlayerEat() {
         return player.getPlayerEat();
     }

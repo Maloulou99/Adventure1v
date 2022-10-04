@@ -8,7 +8,7 @@ public class Player {
     private String eat;
     private ArrayList<Item> inventory;
 
-    //Tilføj objekter til player
+    //Variabler til player
     public Player(Room currentRoom) {
         this.inventory = new ArrayList<>();
         this.currentRoom = currentRoom;
@@ -16,23 +16,11 @@ public class Player {
     }
 
 
-    //Inventory metoder
+    //Inventory metode
     public ArrayList<Item> getInventory() {
         return inventory;
     }
 
-    public void addItem(Item i) {
-        this.inventory.add(i);
-    }
-
-    public Item searchInventoryItems(String name) {
-        for (Item i : inventory) {
-            if (i.getItemName().equals(name)) {
-                return i;
-            }
-        }
-        return null;
-    }
 
     public String look() {
         if (currentRoom.getItems().isEmpty())
@@ -148,8 +136,7 @@ public class Player {
     public int getPlayerHealth() {
         return health;
     }
-
-    public String getPlayerEat() {
-        return eat;
+    public String getPlayerEat(){
+        return getPlayerEat();
     }
 }

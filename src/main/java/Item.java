@@ -6,7 +6,7 @@ public class Item {
     private String itemDescription;
 
 
-
+    //Eksempel på noget jeg skal forstå....
     /*public Item(String itemDescription){
         this(itemDescription, itemDescription.substring(itemDescription.lastIndexOf("")+1));
     }*/
@@ -15,6 +15,7 @@ public class Item {
         this.itemName = itemName;
         this.itemDescription = itemDescription;
     }
+
 
     public String getItemName() {
         return itemName;

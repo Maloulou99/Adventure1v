@@ -4,8 +4,6 @@ public class Room {
 
     private String roomName;
     private String roomDescription;
-    private String itemName;
-    private String itemDescription;
     private Room roomNorth;
     private Room roomSouth;
     private Room roomEast;
@@ -27,28 +25,12 @@ public class Room {
         items.add(itemAdd);
     }
 
-
-    /*public Item getItems(String name) {
-        for (Item item : getItems()) {
-            if (item.getItemName().equalsIgnoreCase(name)) ;
-        }
-        return null;
-    }*/
-
-    public void removeItem(Item item) {
-        getItems().remove(item);
+    public void addFood(String foodName, String foodDescription, int health) {
+        Item food = new Food(foodName, foodDescription, health);
+        items.add(food);
     }
 
-
-    public void seeItem(ArrayList<Item> item) {
-        System.out.println(item.toString());
-    }
-
-    public void showItems(ArrayList<Item> item) {
-        seeItem(item);
-    }
-
-
+    //Setter
     public void setRoomNorth(Room roomNorth) {
         this.roomNorth = roomNorth;
     }
@@ -88,18 +70,6 @@ public class Room {
 
     public String getRoomName() {
         return roomName;
-    }
-
-    public void setRoomName() {
-        this.roomName = roomName;
-    }
-
-    public String getItemDescription() {
-        return itemDescription;
-    }
-
-    public String getItemName() {
-        return itemName;
     }
 
 
