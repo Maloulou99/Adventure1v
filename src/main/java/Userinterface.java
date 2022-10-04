@@ -33,26 +33,26 @@ public class Userinterface {
         boolean player = true;
         while (player) {
             String input = extra.getScanString();
-            String [] userInputs = input.split(" ");
+            String[] userInputs = input.split(" ");
             String command = userInputs[0];
             String userChoice = "";
-            if(userInputs.length > 1){
+            if (userInputs.length > 1) {
                 userChoice = userInputs[1];
             }
             switch (command) {
                 case "go":
                     boolean succesGo = adventure.go(userChoice);
-                    if(succesGo){
+                    if (succesGo) {
                         System.out.println("You have gone " + userChoice);
-                    } else{
+                    } else {
                         System.out.println("You can't go that way");
                     }
                     break;
                 case "take":
                     boolean succesTake = adventure.take(userChoice);
-                    if(succesTake){
+                    if (succesTake) {
                         System.out.println("You have taken " + userChoice);
-                    } else{
+                    } else {
                         System.out.println("You can't take this item");
                     }
                     break;
@@ -63,19 +63,19 @@ public class Userinterface {
                     break;
                 case "inventory", "i":
                     //System.out.println(adventure.getInventory());
-                    for(Item item : adventure.getInventory()){
+                    for (Item item : adventure.getInventory()) {
                         System.out.println("* " + item.getItemName());
                     }
                     break;
                 case "drop", "d":
                     boolean succesDrop = adventure.dropItem(userChoice);
-                    if(succesDrop){
+                    if (succesDrop) {
                         System.out.println("You have doped " + userChoice);
-                    } else{
+                    } else {
                         System.out.println("Could't find at item");
                     }
                     break;
-                case "health" :
+                case "health":
                     System.out.println(adventure.getPlayerHealth());
                     break;
                 case "help", "h":
@@ -108,89 +108,6 @@ public class Userinterface {
             }
         }
     }
-
-
-
-    public void checkIsPossible(boolean isPossible) {
-        if (isPossible) {
-            System.out.println("You are now in " + adventure.getRoomName());
-            System.out.println(adventure.look());
-        } else {
-            System.out.println("You can not go that way!");
-        }
-    }
-
-    public void checkIsPossibleToTakeItem(boolean isPossibleToTakeItem) {
-        if (isPossibleToTakeItem) {
-            System.out.println(takeItem + " added to your inventory backpack!");
-        } else {
-            System.out.println("There is no such item to take around here");
-        }
-    }
-
-    public void checkIsPossibleToDropItem(boolean isPossibleToDropItem) {
-        if (isPossibleToDropItem) {
-            System.out.println(dropItem + " dropped in " + adventure.getRoomName());
-        } else {
-            System.out.println("You do not have that item!");
-        }
-    }
-
-    /*public void run() {
-
-        System.out.println("Welcome to the Adventure Game");
-        while (true) {
-            String input = ui.getScanString();
-            if (input.equalsIgnoreCase("Go north")) {
-                if (adventure.goNorth() == true) {
-                    System.out.println("You can go north");
-                    System.out.println(adventure.getCurrentRoom());
-                } else {
-                    System.out.println("You cannot go north");
-                }
-
-            } else if (input.equalsIgnoreCase("Go south")) {
-                if (adventure.goSouth() == true) {
-                    System.out.println("You can go south");
-                    System.out.println(adventure.getCurrentRoom());
-                } else {
-                    System.out.println("You cannot go south");
-                }
-
-            } else if (input.equalsIgnoreCase("Go east")) {
-                if (adventure.goEast() == true) {
-                    System.out.println("Going east");
-                    System.out.println(adventure.getCurrentRoom());
-                } else {
-                    Syst    em.out.println("You cannot go east");
-                }
-
-            } else if (input.equalsIgnoreCase("Go west")) {
-                if (adventure.goWest() == true) {
-                    System.out.println("Going west");
-                    System.out.println(adventure.getCurrentRoom());
-                } else {
-                    System.out.println("You cannot go west");
-                }
-
-            } else if (input.equalsIgnoreCase("Exit")) {
-                System.out.println("Exiting Thanks for playing");
-                System.exit(0);
-
-            } else if (input.equalsIgnoreCase("Help")) {
-                System.out.println("Helping");
-
-            } else if (input.equalsIgnoreCase("Look")) {
-                System.out.println("Looking");
-
-                System.out.println(room.getRoomName());
-                System.out.println(room.getRoomDescription());
-
-            } else {
-                System.out.println("You cannot write that");
-            }
-        }
-    }*/
 }
 
 

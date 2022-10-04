@@ -4,14 +4,12 @@ public class Item {
 
     private String itemName;
     private String itemDescription;
-    private int health;
-    private String eat;
 
 
 
-    public Item(String itemDescription){
+    /*public Item(String itemDescription){
         this(itemDescription, itemDescription.substring(itemDescription.lastIndexOf("")+1));
-    }
+    }*/
 
     public Item(String itemName, String itemDescription) {
         this.itemName = itemName;
