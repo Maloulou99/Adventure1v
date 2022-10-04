@@ -5,10 +5,11 @@ public class Player {
     private Room currentRoom;
     private String name;
     private int health;
+    private String eat;
     private ArrayList<Item> inventory;
 
-
-    public Player (Room currentRoom){
+    //Tilføj objekter til player
+    public Player(Room currentRoom) {
         this.inventory = new ArrayList<>();
         this.currentRoom = currentRoom;
         this.health = 100;
@@ -19,9 +20,11 @@ public class Player {
     public ArrayList<Item> getInventory() {
         return inventory;
     }
+
     public void addItem(Item i) {
         this.inventory.add(i);
     }
+
     public Item searchInventoryItems(String name) {
         for (Item i : inventory) {
             if (i.getItemName().equals(name)) {
@@ -39,16 +42,17 @@ public class Player {
 
     }
 
-    public Item searchItem(String itemName){
-        for (Item item : this.inventory){
-            if(item.getItemName().equals(itemName));
+    public Item searchItem(String itemName) {
+        for (Item item : this.inventory) {
+            if (item.getItemName().equals(itemName)) ;
             return item;
-        } return null;
+        }
+        return null;
     }
 
     public boolean takeItem(String itemName) {
-        for(Item item : currentRoom.getItems()){
-            if(item.getItemName().equals(itemName)){
+        for (Item item : currentRoom.getItems()) {
+            if (item.getItemName().equals(itemName)) {
                 inventory.add(item);
                 currentRoom.getItems().remove(item);
                 return true;
@@ -68,15 +72,15 @@ public class Player {
         return false;
     }
 
-    public Room getCurrentRoom(){
+    public Room getCurrentRoom() {
         return currentRoom;
     }
 
-    //Rummene som bruger kan passere
+    //En metode som benytter rum-metoderne som bruger kan passere og sættes ind i en forloop
 
-    public boolean move(char direction){
+    public boolean move(char direction) {
         Room requestRoom = null;
-        if(direction == 'n'){
+        if (direction == 'n') {
             requestRoom = currentRoom.getRoomNorth();
         } else if (direction == 's') {
             requestRoom = currentRoom.getRoomSouth();
@@ -86,16 +90,16 @@ public class Player {
             requestRoom = currentRoom.getRoomWest();
         }
 
-        if(requestRoom != null){
+        if (requestRoom != null) {
             currentRoom = requestRoom;
             return true;
-        } else{
+        } else {
             return false;
         }
     }
 
 
-
+    //Metoder til bruger kan bevæge sig i rummene
     public boolean goNorth() {
         if (currentRoom.getRoomNorth() == null) {
             return false;
@@ -131,16 +135,21 @@ public class Player {
             return true;
         }
     }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getRoomName(){
+    public String getRoomName() {
         return currentRoom.getRoomName();
     }
 
 
     public int getPlayerHealth() {
         return health;
+    }
+
+    public String getPlayerEat() {
+        return eat;
     }
 }

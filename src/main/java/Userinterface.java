@@ -78,6 +78,9 @@ public class Userinterface {
                 case "health":
                     System.out.println(adventure.getPlayerHealth());
                     break;
+                case "eat":
+                    System.out.println(adventure.getPlayerEat());
+                    break;
                 case "help", "h":
                     System.out.println(("""
                             You have some choice here:

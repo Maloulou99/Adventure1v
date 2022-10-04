@@ -49,4 +49,7 @@ public class Adventure {
     }
 
 
+    public String getPlayerEat() {
+        return player.getPlayerEat();
+    }
 }
