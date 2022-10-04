@@ -72,7 +72,7 @@ public class Userinterface {
                     if (succesDrop) {
                         System.out.println("You have doped " + userChoice);
                     } else {
-                        System.out.println("Could't find at item");
+                        System.out.println("Couldn't find at item");
                     }
                     break;
                 case "health":
@@ -80,7 +80,6 @@ public class Userinterface {
                     break;
                 case "eat":
                     System.out.println(adventure.getPlayerEat());
-
                     break;
                 case "help", "h":
                     System.out.println(("""

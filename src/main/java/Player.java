@@ -137,6 +137,8 @@ public class Player {
         return health;
     }
     public String getPlayerEat(){
-        return getPlayerEat();
+        return eat;
     }
+
+
 }
