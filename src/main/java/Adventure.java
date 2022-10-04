@@ -52,7 +52,7 @@ public class Adventure {
         return player.goWest();
     }
 
-
+//
     public String getRoomName() {
         return player.getRoomName();
     }
