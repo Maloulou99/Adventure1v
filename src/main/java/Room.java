@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Room {
+
     private String roomName;
     private String roomDescription;
     private String itemName;
@@ -19,48 +20,38 @@ public class Room {
         this.roomDescription = description;
         item = new ArrayList<>();
     }
-    public Room(){
-
-    }
 
     //Konstruktør som benyttes til Item, så vi kan lave forskellige metoder til Item
-    //TODO jeg skal have kigget på show item, da item objekt ikke har en liste til at kunne finde en item i currentroom
     public void addItem(String itemName, String itemDescription) {
-        Item weapon = new Item(itemName, itemDescription);
-        item.add(weapon);
+        Item itemAdd = new Item(itemName, itemDescription);
+        item.add(itemAdd);
     }
-    public Item findItem(String name, Room currentRoom){
-        for (Item item : currentRoom.getItem()){
-            if(item.getItemName().equalsIgnoreCase(name));
-            return item;
-        } return null;
-    }
-    //TODO jeg skal have ryket denne til UI klassen , da et kriterie er at man ikke må have sout i andre klasser
-    public void noItem(String name){
-        System.out.println("Your choice does not exist " + name);
-    }
-    public void removeItem(Item item, Room currentRoom) {
-        currentRoom.getItem().remove(item);
-    }
-    public Item takeItem(String itemName, Room currentRoom){
-        Item item = findItem(itemName, currentRoom);
-        if(item == null){
-        currentRoom.noItem(itemName);
-        }else{
-           removeItem(item, currentRoom);
+
+    public Item getItem(String name) {
+        for (Item item : getItem()) {
+            if (item.getItemName().equalsIgnoreCase(name)) ;
         }
-        return item;
+        return null;
     }
+
+    public void removeItem(Item item) {
+        getItem().remove(item);
+    }
+
+    public Item takeItem() {
+        if (item != null) {
+        } else {
+            return null;
+        }
+        return null;
+    }
+
     public void seeItem(ArrayList<Item> item) {
         System.out.println(item.toString());
     }
 
-    public void showItems(ArrayList<Item>item) {
+    public void showItems(ArrayList<Item> item) {
         seeItem(item);
-    }
-    public void printItemsInRoom(int i, Room currentRoom) {
-        System.out.println(currentRoom.getItem().get(i).getItemName());
-        System.out.println(currentRoom.getItem().get(i).getItemDescription());
     }
 
 
@@ -104,7 +95,8 @@ public class Room {
     public String getRoomName() {
         return roomName;
     }
-    public void setRoomName(){
+
+    public void setRoomName() {
         this.roomName = roomName;
     }
 

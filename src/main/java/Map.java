@@ -1,7 +1,4 @@
 public class Map {
-
-
-    private Adventure adventure;
     private Room starterRoom;
 
     public Map() {

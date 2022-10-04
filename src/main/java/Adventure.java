@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Adventure {
 
@@ -6,53 +6,54 @@ public class Adventure {
     private Map map = new Map();
 
     public Adventure() {
-        Scanner sc = new Scanner(System.in);
 
         player = new Player(map.getStarterRoom());
-        player.setCurrentRoom(map.getStarterRoom());
+        map.getStarterRoom();
+    }
+
+    public void takeItem(String itemName) {
+        player.takeItem(itemName);
+    }
+
+    public void getItem(String searchItem) {
+        player.searchItem(searchItem);
+    }
+
+    public void dropItem(String dropItem){
+        player.dropItem(dropItem);
+    }
+    public String look() {
+       return player.look();
+    }
+
+    public boolean getCurrentRoom() {
+        player.getCurrentRoom();
+        return getCurrentRoom();
+    }
+
+    public ArrayList<Item> getInventory() {
+        return player.getInventory();
+    }
+
+    public void setName(String setName) {
+        player.setName(setName);
+    }
+
+    public boolean goNorth(){
+        return player.goNorth();
+    }
+    public boolean goSouth(){
+        return player.goSouth();
+    }
+    public boolean goEast(){
+        return player.goEast();
+    }
+    public boolean goWest(){
+        return player.goWest();
     }
 
 
-    //Tilføj rummene med output til bruger
-    public boolean goNorth() {
-        if (player.getCurrentRoom().getRoomNorth() == null) {
-            return false;
-        } else {
-            player.setCurrentRoom(player.getCurrentRoom().getRoomNorth());
-            return true;
-        }
+    public String getRoomName() {
+        return player.getRoomName();
     }
-
-    public boolean goSouth() {
-        if (player.getCurrentRoom().getRoomSouth() == null) {
-            return false;
-        } else {
-            player.setCurrentRoom(player.getCurrentRoom().getRoomSouth());
-            return true;
-        }
-    }
-
-    public boolean goEast() {
-        if (player.getCurrentRoom().getRoomEast() == null) {
-            return false;
-        } else {
-            player.setCurrentRoom(player.getCurrentRoom().getRoomEast());
-            return true;
-        }
-    }
-
-    public boolean goWest() {
-        if (player.getCurrentRoom().getRoomWest() == null) {
-            return false;
-        } else {
-            player.setCurrentRoom(player.getCurrentRoom().getRoomWest());
-            return true;
-        }
-    }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-
 }
