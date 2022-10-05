@@ -9,6 +9,7 @@ public class Room {
     private Room roomEast;
     private Room roomWest;
     private ArrayList<Item> items;
+    private ArrayList<Food> food;
 
 
     //Arrayliste til brug til Item Klassen
@@ -81,4 +82,5 @@ public class Room {
     public ArrayList<Item> getItems() {
         return items;
     }
+
 }

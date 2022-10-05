@@ -15,13 +15,14 @@ public class Map {
 
 
         //TODO skal tilføje kan eat eller ikke
+        //TODO skil food og item fra
         room1.setRoomEast(room2);
         room1.setRoomSouth(room4);
 
         room2.setRoomWest(room1);
         room2.setRoomEast(room3);
         room2.addItem("lamp", " an old lamp hanging at the wall");
-        room2.addFood("lamp", " this lamp are to nasty, and not edible", 0);
+        room2.addFood("", " this lamp are to nasty, and not edible", 0);
 
         room3.setRoomWest(room2);
         room3.setRoomSouth(room6);

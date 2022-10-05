@@ -12,7 +12,7 @@ public class Player {
     public Player(Room currentRoom) {
         this.inventory = new ArrayList<>();
         this.currentRoom = currentRoom;
-        this.health = 100;
+        this.health = 50;
     }
 
 
@@ -60,11 +60,39 @@ public class Player {
         return false;
     }
 
-    public Room getCurrentRoom() {
-        return currentRoom;
+    public int getPlayerHealth(Food food) {
+        return food.getHealthPoints();
+    }
+    public int getPlayerHealth(){
+        return health;
+    }
+
+    public int updatePlayerHealth(int healthPoints) {
+        health += healthPoints;
+        return health;
+    }
+
+    public boolean eat(String food) {
+        for (Item foodItem : currentRoom.getItems()) {
+            if (foodItem.getItemName().equals(food)) {
+                if (foodItem instanceof Food) {
+                    updatePlayerHealth(getPlayerHealth((Food) foodItem));
+                    inventory.remove(foodItem);
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+        return false;
     }
 
     //En metode som benytter rum-metoderne som bruger kan passere og sættes ind i en forloop
+    public Room getCurrentRoom() {
+        return currentRoom;
+    }
 
     public boolean move(char direction) {
         Room requestRoom = null;
@@ -133,12 +161,5 @@ public class Player {
     }
 
 
-    public int getPlayerHealth() {
-        return health;
-    }
-    public String getPlayerEat(){
-        return eat;
-    }
-
-
 }
+

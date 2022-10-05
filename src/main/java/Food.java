@@ -1,13 +1,14 @@
 public class Food extends Item{
 
-    private int health;
+    private int healthPoints;
 
     public Food(String itemName, String itemDescription, int health) {
-        super(itemName, itemDescription);
-        this.health = health;
+        super(itemName, itemDescription);// kald basisklassens konstruktør
+        this.healthPoints = health;
     }
 
-    public int getHealth(){
-        return health;
+    public int getHealthPoints(){
+        return healthPoints;
     }
+
 }
