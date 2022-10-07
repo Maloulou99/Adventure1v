@@ -5,6 +5,7 @@ public class Player {
     private Room currentRoom;
     private String name;
     private int health;
+    private String printHealthDescription;
     private String eat;
     private ArrayList<Item> inventory;
 
@@ -13,6 +14,8 @@ public class Player {
         this.inventory = new ArrayList<>();
         this.currentRoom = currentRoom;
         this.health = 50;
+        this.printHealthDescription = printHealthDescription();
+
     }
 
 
@@ -28,14 +31,6 @@ public class Player {
         else
             return currentRoom.getItems() + currentRoom.getRoomDescription();
 
-    }
-
-    public Item searchItem(String itemName) {
-        for (Item item : this.inventory) {
-            if (item.getItemName().equals(itemName)) ;
-            return item;
-        }
-        return null;
     }
 
     public boolean takeItem(String itemName) {
@@ -58,6 +53,22 @@ public class Player {
             }
         }
         return false;
+    }
+
+    //Vi giver lige brugeren en update på hvordan spillerens health er
+    public String printHealthDescription(){
+        String printHealthPoints = "";
+        if(health > 0 && health <= 10){
+            printHealthPoints = "Your health is very low, you better do something about it!";
+        } else if (health <= 20) {
+            printHealthPoints = "Your health is ok, but you are fighting for your life now";
+        } else if (health <= 30) {
+            printHealthPoints = "You are in good shape right now";
+        } else if (health <= 40) {
+            printHealthPoints = "You are like a newborn baby, no worries right now";
+        } else if (health <= 45){
+            printHealthPoints = "Your health is top notch, there are a few good pull-ups saved";
+        } return printHealthPoints;
     }
 
     public int getPlayerHealth(Food food) {

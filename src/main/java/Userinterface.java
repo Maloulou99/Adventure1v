@@ -15,11 +15,11 @@ public class Userinterface {
         adventure.setName(extra.getScanString());
         System.out.println("""
                 You will start in room 1, to be able to move, type one of the below:
-                Tap - 'Go North' or "n"
-                Tap - 'Go East' or "e"
-                Tap - 'Go South' or "s"
-                Tap - 'Go West' or "w"
-                Tap - 'Help' or 'h' to get help in the game
+                Tap - 'go north' or "n"
+                Tap - 'go east' or "e"
+                Tap - 'go south' or "s"
+                Tap - 'go west' or "w"
+                Tap - 'help' or 'h' to get help in the game
                 """);
 
         //input = ui.getScanString(); //String som giver errormessage, hvis bruger skriver en anden karakter
@@ -84,28 +84,30 @@ public class Userinterface {
                 case "help", "h":
                     System.out.println(("""
                             You have some choice here:
-                            Tap - 'Go North' or "n" to go north
-                            Tap - 'Go East' or "e" to go east
-                            Tap - 'Go South' or "s" to go south
-                            Tap - 'Go West' or "w" to go west
-                            Tap - 'Look' or "l" to looking
-                            Tap - 'Inventory' or 'i' to see your backpack
-                            Tap - 'Drop' or 'd' to drop your item
-                            Tap - 'Take' or 't' to take a item
-                            Tap - 'End Game' or "End to end the game"""));
+                            Tap - 'go north' or "n" to go north
+                            Tap - 'go east' or "e" to go east
+                            Tap - 'go south' or "s" to go south
+                            Tap - 'go west' or "w" to go west
+                            Tap - 'look' or "l" to looking
+                            Tap - 'inventory' or 'i' to see your backpack
+                            Tap - 'drop' or 'd' to drop your item
+                            Tap - 'take' or 't' to take a item
+                            Tap - 'eat' to eat something food
+                            Tap - 'health' to see your health
+                            Tap - 'end game' to end the game"""));
                     break;
-                case "End game", "end":
+                case "end game":
                     player = false;
                     break;
                 default:
                     System.out.println("Try again");
                     System.out.println("""
-                            Tap - 'Go North'
-                            Tap - 'Go East'
-                            Tap - 'Go South'
-                            Tap - 'Go West'
-                            Tap - 'Look'
-                            Tap - 'End Game'""");
+                            Tap - 'go north'
+                            Tap - 'go east'
+                            Tap - 'go south'
+                            Tap - 'go west'
+                            Tap - 'look'
+                            Tap - 'end game'""");
                     break;
 
             }
