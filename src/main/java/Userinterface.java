@@ -1,8 +1,7 @@
 public class Userinterface {
     private Extra extra = new Extra();
     private Adventure adventure;
-    private String userChoice, takeItem, dropItem;
-    private boolean isPossible, isPossibleToTakeItem, isPossibleToDropItem;
+
 
 
     public Userinterface(Adventure adventure) {
@@ -76,10 +75,37 @@ public class Userinterface {
                     }
                     break;
                 case "health":
-                    System.out.println(adventure.getPlayerHealth());
+                    System.out.println("Your health is " + adventure.getPrintHealthDescription());
                     break;
                 case "eat":
                     System.out.println(adventure.getPlayerEat(userChoice));
+                    break;
+                case "attack":
+                    AttackEnum attack = adventure.getAttack();
+                    switch (attack){
+                        case MELEE:
+                            System.out.println("Melee has been used!");
+                            break;
+                        case FIRED:
+                            System.out.println("You has fired!");
+                            break;
+                        case NO_AMMO:
+                            System.out.println("You don't have any ammo back, oh no!");
+                    }
+                    break;
+                case "equip":
+                    System.out.println("Your inventory will be showed here:" + adventure.getInventory() );
+                    WeaponEnum isWeapon = adventure.getEquipWeapon(extra.getScanString());
+                    switch (isWeapon){
+                        case WEAPON:
+                            System.out.println("Weapon equipped");
+                            break;
+                        case NOT_WEAPON:
+                            System.out.println("It's not a weapon");
+                            break;
+                        case NOT_FUND:
+                            System.out.println("Weapon not fund");
+                    }
                     break;
                 case "help", "h":
                     System.out.println(("""

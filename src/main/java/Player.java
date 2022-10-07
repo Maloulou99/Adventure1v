@@ -3,10 +3,12 @@ import java.util.ArrayList;
 public class Player {
 
     private Room currentRoom;
+    private Weapon currentWeapon;
     private String name;
     private int health;
     private String printHealthDescription;
     private String eat;
+    private Weapon equipWeapons;
     private ArrayList<Item> inventory;
 
     //Variabler til player
@@ -16,6 +18,16 @@ public class Player {
         this.health = 50;
         this.printHealthDescription = printHealthDescription();
 
+    }
+
+
+    public Item searchInventory(String itemName) {
+        for (Item i : inventory) {
+            if (i.getItemName().equalsIgnoreCase(itemName)) {
+                return i;
+            }
+        }
+        return null;
     }
 
 
@@ -56,9 +68,9 @@ public class Player {
     }
 
     //Vi giver lige brugeren en update på hvordan spillerens health er
-    public String printHealthDescription(){
+    public String printHealthDescription() {
         String printHealthPoints = "";
-        if(health > 0 && health <= 10){
+        if (health > 0 && health <= 10) {
             printHealthPoints = "Your health is very low, you better do something about it!";
         } else if (health <= 20) {
             printHealthPoints = "Your health is ok, but you are fighting for your life now";
@@ -66,15 +78,37 @@ public class Player {
             printHealthPoints = "You are in good shape right now";
         } else if (health <= 40) {
             printHealthPoints = "You are like a newborn baby, no worries right now";
-        } else if (health <= 45){
+        } else if (health <= 45) {
             printHealthPoints = "Your health is top notch, there are a few good pull-ups saved";
-        } return printHealthPoints;
+        }
+        return printHealthPoints;
+    }
+
+    public WeaponEnum equipWeapon(String weaponName) {
+        Item equipWeapons = searchInventory(weaponName);
+        if (equipWeapons == null) {
+            return WeaponEnum.NOT_WEAPON;
+        } else if (equipWeapons instanceof Weapon) {
+            currentWeapon = (Weapon) equipWeapons;
+            //setEquipWeapons((Weapon) equipWeapons);
+            getCurrentRoom().removeItem(equipWeapons);
+            return WeaponEnum.WEAPON;
+        } else
+            return WeaponEnum.NOT_FUND;
+    }
+
+    public AttackEnum attack() {
+        if (currentWeapon != null) {
+            return currentWeapon.attack();
+        } else
+            return AttackEnum.NO_WEAPON_EQUIPPED;
     }
 
     public int getPlayerHealth(Food food) {
         return food.getHealthPoints();
     }
-    public int getPlayerHealth(){
+
+    public int getPlayerHealth() {
         return health;
     }
 
@@ -171,6 +205,13 @@ public class Player {
         return currentRoom.getRoomName();
     }
 
+    public void setEquipWeapons(Weapon equipWeapons) {
+        this.equipWeapons = equipWeapons;
+    }
+
+    public Item getCurrentWeapon() {
+        return currentWeapon;
+    }
 
 }
 

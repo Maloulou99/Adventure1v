@@ -2,8 +2,10 @@ import java.util.ArrayList;
 
 public class Adventure {
 
+
     private Player player;
     private Map map = new Map();
+
 
     public Adventure() {
         player = new Player(map.getStarterRoom());
@@ -11,10 +13,16 @@ public class Adventure {
     }
 
 
+
     public boolean take(String takeThis) {
         return player.takeItem(takeThis);
     }
 
+    public enum ReturnMessage{
+        NOT_Found,
+        CANT,
+        OK
+    }
 
     public boolean dropItem(String itemName) {
         return player.dropItem(itemName);
@@ -43,12 +51,22 @@ public class Adventure {
     public String getRoomName() {
         return player.getRoomName();
     }
+    public AttackEnum getAttack(){
+        return player.attack();
+    }
 
     public int getPlayerHealth(){
         return player.getPlayerHealth();
+    }
+    public String getPrintHealthDescription(){
+        return player.printHealthDescription();
     }
 
     public boolean getPlayerEat(String food) {
         return player.eat(food);
     }
+    public WeaponEnum getEquipWeapon(String weaponName){
+        return player.equipWeapon(weaponName);
+    }
 }
+

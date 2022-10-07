@@ -21,16 +21,24 @@ public class Room {
     }
 
     //Konstruktør som benyttes til Item, så vi kan lave forskellige metoder til Item
+    //Method overloader, kunne det have være hvis jeg benyttede samme objektnavn "addItem"
     public void addItem(String itemName, String itemDescription) {
         Item itemAdd = new Item(itemName, itemDescription);
         items.add(itemAdd);
     }
 
     public void addFood(String foodName, String foodDescription, int health) {
-        Item food = new Food(foodName, foodDescription, health);
-        items.add(food);
+        Item foodAdd = new Food(foodName, foodDescription, health);
+        items.add(foodAdd);
     }
-
+    public void addRangedWeapon(String weaponName, String nameDescription, int ammo){
+        Item rangedWeapon = new RangedWeapon(weaponName, nameDescription, ammo);
+        items.add(rangedWeapon);
+    }
+    public void addMeleeWeapon(String weaponName, String nameDescription){
+        Item meleeWeapon = new MeleeWeapon(weaponName, nameDescription);
+        items.add(meleeWeapon);
+    }
     //Setter
     public void setRoomNorth(Room roomNorth) {
         this.roomNorth = roomNorth;
@@ -78,6 +86,9 @@ public class Room {
         return roomName + " " + roomDescription;
     }
 
+    public void removeItem(Item item){
+        items.remove(item);
+    }
 
     public ArrayList<Item> getItems() {
         return items;

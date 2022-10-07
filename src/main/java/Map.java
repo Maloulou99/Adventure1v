@@ -15,21 +15,25 @@ public class Map {
 
         room1.setRoomEast(room2);
         room1.setRoomSouth(room4);
+        room1.addRangedWeapon("gun", " cool handheld gun", 5);
 
         room2.setRoomWest(room1);
         room2.setRoomEast(room3);
         room2.addItem("lamp", " an old lamp hanging at the wall");
         room2.addFood("banana", " looks ok, let me take it", 10);
+        room2.addRangedWeapon("Shotgun", " big and heavy gun", 10);
 
         room3.setRoomWest(room2);
         room3.setRoomSouth(room6);
         room3.addItem("blanket", " lies curled up on the floor");
         room3.addFood("pizza", " oh, who ordered pizza? It's to delicious", 35 );
+        room3.addMeleeWeapon("knife", " that's a dull one");
 
         room4.setRoomNorth(room1);
         room4.setRoomSouth(room7);
         room4.addItem("sword", " a shiny sword is laying on the ground");
         room4.addFood("chili", " chili there wake you up a slightly ", 12);
+        room4.addRangedWeapon("boomerang", " this boomerang have skills", 3);
 
         room5.setRoomSouth(room8);
         room5.addItem("tv", " can you even watch tv on that tv?");
@@ -39,6 +43,7 @@ public class Map {
         room6.setRoomSouth(room9);
         room6.addItem("map", " an old map, seems like it could lead to something valuable");
         room6.addFood("Spaghetti", " too much cheese", -23);
+        room6.addMeleeWeapon("nippeltwister", " good skill to know");
 
         room7.setRoomNorth(room4);
         room7.setRoomEast(room8);
@@ -52,6 +57,7 @@ public class Map {
 
         room9.setRoomNorth(room6);
         room9.setRoomWest(room8);
+        room9.addRangedWeapon("bananapell", " it's so shiny", 1);
 
         this.starterRoom = room1;
 
