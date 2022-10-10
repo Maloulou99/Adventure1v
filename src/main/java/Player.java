@@ -4,6 +4,7 @@ public class Player {
 
     private Room currentRoom;
     private Weapon currentWeapon;
+    private Weapon currentWeapon2;
     private String name;
     private int health;
     private String printHealthDescription;
@@ -90,8 +91,18 @@ public class Player {
             return WeaponEnum.NOT_WEAPON;
         } else if (equipWeapons instanceof Weapon) {
             currentWeapon = (Weapon) equipWeapons;
-            //setEquipWeapons((Weapon) equipWeapons);
             getCurrentRoom().removeItem(equipWeapons);
+            return WeaponEnum.WEAPON;
+        } else
+            return WeaponEnum.NOT_FUND;
+    }
+    public WeaponEnum equipWeapon2(String weaponName) {
+        Item equipWeapons2 = searchInventory(weaponName);
+        if (equipWeapons2 == null) {
+            return WeaponEnum.NOT_WEAPON;
+        } else if (equipWeapons2 instanceof Weapon) {
+            currentWeapon2 = (Weapon) equipWeapons2;
+            getCurrentRoom().removeItem(equipWeapons2);
             return WeaponEnum.WEAPON;
         } else
             return WeaponEnum.NOT_FUND;
@@ -100,6 +111,12 @@ public class Player {
     public AttackEnum attack() {
         if (currentWeapon != null) {
             return currentWeapon.attack();
+        } else
+            return AttackEnum.NO_WEAPON_EQUIPPED;
+    }
+    public AttackEnum attack2() {
+        if (currentWeapon2 != null) {
+            return currentWeapon2.attack();
         } else
             return AttackEnum.NO_WEAPON_EQUIPPED;
     }
@@ -138,6 +155,7 @@ public class Player {
     public Room getCurrentRoom() {
         return currentRoom;
     }
+
 
     public boolean move(char direction) {
         Room requestRoom = null;
@@ -211,6 +229,9 @@ public class Player {
 
     public Item getCurrentWeapon() {
         return currentWeapon;
+    }
+    public Item getCurrentWeapon2(){
+        return currentWeapon2;
     }
 
 }

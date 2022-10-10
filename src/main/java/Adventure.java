@@ -51,8 +51,12 @@ public class Adventure {
     public String getRoomName() {
         return player.getRoomName();
     }
+
     public AttackEnum getAttack(){
         return player.attack();
+    }
+    public AttackEnum getAttack2(){
+        return player.attack2();
     }
 
     public int getPlayerHealth(){
@@ -67,6 +71,9 @@ public class Adventure {
     }
     public WeaponEnum getEquipWeapon(String weaponName){
         return player.equipWeapon(weaponName);
+    }
+    public WeaponEnum getEquipWeapon2(String weaponName){
+        return player.equipWeapon2(weaponName);
     }
 }
 

@@ -80,7 +80,7 @@ public class Userinterface {
                 case "eat":
                     System.out.println(adventure.getPlayerEat(userChoice));
                     break;
-                case "attack":
+               case "attack":
                     AttackEnum attack = adventure.getAttack();
                     switch (attack){
                         case MELEE:
