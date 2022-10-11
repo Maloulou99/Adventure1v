@@ -8,36 +8,66 @@ public class Room {
     private Room roomSouth;
     private Room roomEast;
     private Room roomWest;
-    private ArrayList<Item> items;
-    private ArrayList<Food> food;
+    private ArrayList<Item> items = new ArrayList<>();
+    private Item item;
+    private Weapon weapon;
+    private Enemy enemy;
+    private Food food;
 
 
-    //Arrayliste til brug til Item Klassen
-    //Konstruktør
+    //Konstruktør som definere brugen af de forskellige arrayklasser
+    public Room(String roomName, String roomDescription, Item item, Weapon weapon, Enemy enemy, Food food) {
+        this.roomName = roomName;
+        this.roomDescription = roomDescription;
+        this.item = item;
+        this.weapon = weapon;
+        this.enemy = enemy;
+        this.food = food;
+    }
+    public Room(String roomName, String roomDescription, Weapon weapon){
+        this.roomName = roomName;
+        this.roomDescription = roomDescription;
+        this.weapon = weapon;
+
+    }
+    public Room(String roomName, String roomDescription, Item item){
+        this.roomName = roomName;
+        this.roomDescription = roomDescription;
+        this.item = item;
+    }
+    public Room(String roomName, String roomDescription, Enemy enemy){
+        this.roomName = roomName;
+        this.roomDescription = roomDescription;
+        this.enemy = enemy;
+    }
+    public Room(String roomName, String roomDescription, Item item, Food food){
+        this.roomName = roomName;
+        this.roomDescription = roomDescription;
+        this.item = item;
+        this.food = food;
+    }
+    public Room(String roomName, String roomDescription, Item item, Enemy enemy){
+        this.roomName = roomName;
+        this.roomDescription = roomDescription;
+        this.item = item;
+        this.enemy = enemy;
+    }
     public Room(String roomName, String roomDescription) {
         this.roomName = roomName;
         this.roomDescription = roomDescription;
-        items = new ArrayList<>();
     }
+
+    public String lookItems(){
+        return weapon.getItemName() + ",\t" + weapon.getItemDescription() + "\n"
+                + item.getItemName() + ",\t" + item.getItemDescription() + "\n";
+
+    }
+
 
     //Konstruktør som benyttes til Item, så vi kan lave forskellige metoder til Item
     //Method overloader, kunne det have være hvis jeg benyttede samme objektnavn "addItem"
-    public void addItem(String itemName, String itemDescription) {
-        Item itemAdd = new Item(itemName, itemDescription);
-        items.add(itemAdd);
-    }
-
-    public void addFood(String foodName, String foodDescription, int health) {
-        Item foodAdd = new Food(foodName, foodDescription, health);
-        items.add(foodAdd);
-    }
-    public void addRangedWeapon(String weaponName, String nameDescription, int ammo){
-        Item rangedWeapon = new RangedWeapon(weaponName, nameDescription, ammo);
-        items.add(rangedWeapon);
-    }
-    public void addMeleeWeapon(String weaponName, String nameDescription){
-        Item meleeWeapon = new MeleeWeapon(weaponName, nameDescription);
-        items.add(meleeWeapon);
+    public void addItem(Item item) {
+        items.add(item);
     }
     //Setter
     public void setRoomNorth(Room roomNorth) {

@@ -3,7 +3,6 @@ public class Userinterface {
     private Adventure adventure;
 
 
-
     public Userinterface(Adventure adventure) {
         this.adventure = adventure;
     }
@@ -57,8 +56,7 @@ public class Userinterface {
                     break;
                 case "look", "l":
                     System.out.println("Looking ");
-                    //System.out.println(adventure.look());
-                    System.out.println(adventure.getCurrentRoom().getItems());
+                    System.out.println(adventure.look() + "\n" + adventure.lookItems());
                     break;
                 case "inventory", "i":
                     //System.out.println(adventure.getInventory());

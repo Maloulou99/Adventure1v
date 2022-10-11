@@ -13,7 +13,6 @@ public class Adventure {
     }
 
 
-
     public boolean take(String takeThis) {
         return player.takeItem(takeThis);
     }
@@ -30,6 +29,9 @@ public class Adventure {
 
     public String look() {
         return player.look();
+    }
+    public String lookItems(){
+        return player.lookAround();
     }
 
     public Room getCurrentRoom() {
@@ -55,9 +57,6 @@ public class Adventure {
     public AttackEnum getAttack(){
         return player.attack();
     }
-    public AttackEnum getAttack2(){
-        return player.attack2();
-    }
 
     public int getPlayerHealth(){
         return player.getPlayerHealth();
@@ -72,8 +71,6 @@ public class Adventure {
     public WeaponEnum getEquipWeapon(String weaponName){
         return player.equipWeapon(weaponName);
     }
-    public WeaponEnum getEquipWeapon2(String weaponName){
-        return player.equipWeapon2(weaponName);
-    }
+
 }
 
