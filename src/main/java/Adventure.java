@@ -9,7 +9,6 @@ public class Adventure {
 
     public Adventure() {
         player = new Player(map.getStarterRoom());
-        map.getStarterRoom();
     }
 
 
@@ -31,7 +30,7 @@ public class Adventure {
         return player.look();
     }
     public String lookItems(){
-        return player.lookAround();
+        return "";
     }
 
     public Room getCurrentRoom() {

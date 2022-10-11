@@ -35,12 +35,12 @@ public class Player {
     public ArrayList<Item> getInventory() {
         return inventory;
     }
+
+
     public String look() {
         return currentRoom.getRoomName() + "\n" + currentRoom.getRoomDescription();
     }
-    public String lookAround(){
-        return currentRoom.lookItems();
-    }
+
 
     public boolean takeItem(String itemName) {
         for (Item item : currentRoom.getItems()) {
@@ -108,23 +108,18 @@ public class Player {
         return health;
     }
 
-    public int updatePlayerHealth(int healthPoints) {
+    public void updatePlayerHealth(int healthPoints) {
         health += healthPoints;
-        return health;
     }
 
     public boolean eat(String food) {
         for (Item foodItem : currentRoom.getItems()) {
             if (foodItem.getItemName().equals(food)) {
-                if (foodItem instanceof Food) {
-                    updatePlayerHealth(getPlayerHealth((Food) foodItem));
+                if (foodItem instanceof Food food1) {
+                    updatePlayerHealth(food1.getHealthPoints());
                     inventory.remove(foodItem);
                     return true;
-                } else {
-                    return false;
                 }
-            } else {
-                return false;
             }
         }
         return false;
@@ -209,6 +204,7 @@ public class Player {
     public Item getCurrentWeapon() {
         return currentWeapon;
     }
+
 
 }
 

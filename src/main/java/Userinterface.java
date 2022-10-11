@@ -1,7 +1,31 @@
-public class Userinterface {
-    private Extra extra = new Extra();
-    private Adventure adventure;
+import java.util.Scanner;
 
+public class Userinterface {
+    private Adventure adventure;
+    private Scanner scanner = new Scanner(System.in);
+
+    // Bold High Intensity
+    public static final String BLACK_BOLD_BRIGHT = "\033[1;90m"; // BLACK
+    public int getScanInt(String errorMessage) {
+        while (!scanner.hasNextInt()) {
+            System.out.println(errorMessage);
+            scanner.next();
+        }
+        return readInt();
+    }
+
+    public int readInt(){
+        int readInt = scanner.nextInt();
+        scanner.nextLine();
+        return readInt;
+    }
+    public int getScanInt() {
+        return getScanInt("Value is not allowed, try again ");
+    }
+
+    public String getScanString() {
+        return scanner.nextLine().toLowerCase();
+    }
 
     public Userinterface(Adventure adventure) {
         this.adventure = adventure;
@@ -10,7 +34,7 @@ public class Userinterface {
     public void startProgram() {
         System.out.println("Hi, Welcome to the adventure game let's play!");
         System.out.println("Before we start, choice a player name:");
-        adventure.setName(extra.getScanString());
+        adventure.setName(getScanString());
         System.out.println("""
                 You will start in room 1, to be able to move, type one of the below:
                 Tap - 'go north' or "n"
@@ -26,11 +50,11 @@ public class Userinterface {
 
     private void command() {
 
-        System.out.println(extra.BLACK_BOLD_BRIGHT + "Select an option: ");
+        System.out.println(BLACK_BOLD_BRIGHT + "Select an option: ");
 
         boolean player = true;
         while (player) {
-            String input = extra.getScanString();
+            String input = getScanString();
             String[] userInputs = input.split(" ");
             String command = userInputs[0];
             String userChoice = "";
@@ -56,7 +80,7 @@ public class Userinterface {
                     break;
                 case "look", "l":
                     System.out.println("Looking ");
-                    System.out.println(adventure.look() + "\n" + adventure.lookItems());
+                    System.out.println(adventure.look());
                     break;
                 case "inventory", "i":
                     //System.out.println(adventure.getInventory());
@@ -93,7 +117,7 @@ public class Userinterface {
                     break;
                 case "equip":
                     System.out.println("Your inventory will be showed here:" + adventure.getInventory() );
-                    WeaponEnum isWeapon = adventure.getEquipWeapon(extra.getScanString());
+                    WeaponEnum isWeapon = adventure.getEquipWeapon(getScanString());
                     switch (isWeapon){
                         case WEAPON:
                             System.out.println("Weapon equipped");
@@ -135,6 +159,7 @@ public class Userinterface {
                     break;
 
             }
+
         }
     }
 }
