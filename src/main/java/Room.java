@@ -12,16 +12,9 @@ public class Room {
     private ArrayList<Enemy> enemies = new ArrayList<>();
 
 
-
-    public Room(String roomName, String roomDescription){
-    this.roomName = roomName;
-    this.roomDescription = roomDescription;
-
-    }
-    public Room(String roomName, String roomDescription, Item item) {
+    public Room(String roomName, String roomDescription) {
         this.roomName = roomName;
         this.roomDescription = roomDescription;
-        items.add(item);
     }
 
     //Konstruktør som benyttes til Item, så vi kan lave forskellige metoder til Item
