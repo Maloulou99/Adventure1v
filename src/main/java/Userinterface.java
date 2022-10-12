@@ -109,8 +109,6 @@ public class Userinterface {
                     System.out.println(adventure.getPrintHealthDescription());
                     break;
                 case "eat":
-                    System.out.println(adventure.getEat(getScanString()));
-                    System.out.println("Here is your inventory");
                     System.out.println(adventure.getInventory());
                     FoodEnum isFood = adventure.getEat(userChoice);
                     switch (isFood)
