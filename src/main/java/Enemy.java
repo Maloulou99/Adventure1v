@@ -29,4 +29,8 @@ public class Enemy {
     public AttackEnum attack(){
         return AttackEnum.ENEMY_ATTACKED;
     }
+
+    public String toString(){
+        return enemyName + " " + enemyDescription + " \n weapon:" + weapon;
+    }
 }

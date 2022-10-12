@@ -77,7 +77,7 @@ public class Room {
 
 
     public String toString() {
-        return roomName + " " + roomDescription + " " + items + " " + isEnemy();
+        return roomName + ", " + roomDescription + " " + items + " " + isEnemy();
     }
 
     public String isEnemy() {

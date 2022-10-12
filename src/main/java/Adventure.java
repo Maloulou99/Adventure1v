@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Adventure {
 
 
+
     private Player player;
     private Map map = new Map();
 
@@ -10,7 +11,9 @@ public class Adventure {
     public Adventure() {
         player = new Player(map.getStarterRoom());
     }
-
+    public int printHealthPoints(){
+        return player.getPlayerHealth();
+    }
 
     public boolean take(String takeThis) {
         return player.takeItem(takeThis);
@@ -20,25 +23,12 @@ public class Adventure {
         return player.printHealthDescription();
     }
 
-    public enum ReturnMessage{
-        NOT_Found,
-        CANT,
-        OK
-    }
-
     public boolean dropItem(String itemName) {
         return player.dropItem(itemName);
     }
 
     public String look() {
         return player.look();
-    }
-    public String lookItems(){
-        return "";
-    }
-
-    public Room getCurrentRoom() {
-        return player.getCurrentRoom();
     }
 
     public ArrayList<Item> getInventory() {

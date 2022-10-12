@@ -26,7 +26,7 @@ public class Item {
     }
 
     public String toString(){
-    return getItemName() + getItemDescription();
+    return getItemName() + ": " + getItemDescription() + " ";
     }
 }
 

@@ -33,15 +33,22 @@ public class Userinterface {
 
     public void startProgram() {
         System.out.println("Hi, Welcome to the adventure game let's play!");
-        System.out.println("Before we start, choice a player name:");
+        getScanString();
+        System.out.println("Before we start, choice a player name.\n" + "Your name: ");
         adventure.setName(getScanString());
         System.out.println("""
                 You will start in room 1, to be able to move, type one of the below:
-                Tap - 'go north' or "n"
-                Tap - 'go east' or "e"
-                Tap - 'go south' or "s"
-                Tap - 'go west' or "w"
-                Tap - 'help' or 'h' to get help in the game
+                To go north:
+                TAP > 'go north' or "n"
+                To go east:
+                TAP > 'go east' or "e"
+                To go south:
+                TAP > 'go south' or "s"
+                To go west:
+                TAP > 'go west' or "w"
+                If you need help or more information during the game then:
+                TAP > 'help' or 'h' 
+                Good luck and enjoy!
                 """);
 
         //input = ui.getScanString(); //String som giver errormessage, hvis bruger skriver en anden karakter
@@ -70,7 +77,7 @@ public class Userinterface {
                         System.out.println("You can't go that way");
                     }
                     break;
-                case "take":
+                case "take", "t":
                     boolean succesTake = adventure.take(userChoice);
                     if (succesTake) {
                         System.out.println("You have taken " + userChoice);
@@ -79,13 +86,13 @@ public class Userinterface {
                     }
                     break;
                 case "look", "l":
-                    System.out.println("Looking ");
+                    System.out.println("You have looked... ");
                     System.out.println(adventure.look());
                     break;
                 case "inventory", "i":
                     //System.out.println(adventure.getInventory());
                     for (Item item : adventure.getInventory()) {
-                        System.out.println("* " + item.getItemName());
+                        System.out.println("> " + item.getItemName());
                     }
                     break;
                 case "drop", "d":
@@ -96,14 +103,15 @@ public class Userinterface {
                         System.out.println("Couldn't find at item");
                     }
                     break;
-                case "health":
-                    System.out.println("Your health is " + adventure.getPrintHealthDescription());
+                case "health", "hlt":
+                    int health = adventure.getPlayerHealth();
+                    System.out.println("Your health is: " );
+                    System.out.println(adventure.getPrintHealthDescription());
                     break;
                 case "eat":
                     System.out.println(adventure.getEat(getScanString()));
                     System.out.println("Here is your inventory");
                     System.out.println(adventure.getInventory());
-                    System.out.println("What would you like to eat?");
                     FoodEnum isFood = adventure.getEat(userChoice);
                     switch (isFood)
                     {
@@ -121,11 +129,12 @@ public class Userinterface {
                             break;
                     }
                     break;
-               case "attack":
+               case "attack", "ack":
                     AttackEnum attack = adventure.getAttack();
                     switch (attack){
                         case ENEMY_ATTACKED:
                             System.out.println("You have attacked the enemy! ");
+                            break;
                         case MELEE:
                             System.out.println("Melee has been used!");
                             break;
@@ -136,7 +145,7 @@ public class Userinterface {
                             System.out.println("You don't have any ammo back, oh no!");
                     }
                     break;
-                case "equip":
+                case "equip", "eq":
                     System.out.println("Your inventory will be showed here:" + adventure.getInventory() );
                     WeaponEnum isWeapon = adventure.getEquipWeapon(getScanString());
                     switch (isWeapon){

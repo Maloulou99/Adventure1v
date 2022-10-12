@@ -23,10 +23,10 @@ public class Player {
 
     public void setHealth(Item item) {
         if (item instanceof Food) {
-            this.health += 20;
+            this.health += ((Food) item).getHealthPoints();
         }
-        if (health > 100) {
-            health = 100;
+        if (health > 50) {
+            health = 50;
         }
     }
 
@@ -73,7 +73,7 @@ public class Player {
         return false;
     }
 
-    //Vi giver lige brugeren en update på hvordan spillerens health er
+   //Vi giver lige brugeren en update på hvordan spillerens health er
     public String printHealthDescription() {
         String printHealthPoints = "";
         if (health > 0 && health <= 10) {
@@ -87,7 +87,7 @@ public class Player {
         } else if (health <= 45) {
             printHealthPoints = "Your health is top notch, there are a few good pull-ups saved";
         }
-        return printHealthPoints;
+       return printHealthPoints;
     }
 
     public WeaponEnum equipWeapon(String weaponName) {
@@ -98,11 +98,10 @@ public class Player {
             currentWeapon = (Weapon) equipWeapons;
             getCurrentRoom().removeItem(equipWeapons);
             return WeaponEnum.WEAPON;
-        } else
+        } else {
             return WeaponEnum.NOT_FUND;
+        }
     }
-
-
 
     public AttackEnum attack() {
         if (currentWeapon != null) {
@@ -176,7 +175,6 @@ public class Player {
         }
     }
 
-
     //Metoder til bruger kan bevæge sig i rummene
     public boolean goNorth() {
         if (currentRoom.getRoomNorth() == null) {
@@ -231,7 +229,7 @@ public class Player {
     }
 
     public AttackEnum attackEnemy(){
-        if(equipWeapons instanceof Weapon){
+        if(equipWeapons != null){
             currentEnemy.setHealth(currentEnemy.getHealth() - equipWeapons.getDamage());
             return equipWeapons.attack();
         } else if(currentRoom.hasEnemy()){
