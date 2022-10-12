@@ -22,18 +22,28 @@ public class Room {
     public void addItem(Item item) {
         items.add(item);
     }
+
+    //Metoder til brug af enemy, add item, tilføje, fjerne enemy....
     public void addEnemy(Enemy enemy){
         enemies.add(enemy);
+    }
+    public Weapon addEnemyItem(Item enemyItem) {
+        items.add(enemyItem);
+        return null;
     }
     public Enemy getEnemy(){
        return enemies.get(0);
     }
-
     public boolean hasEnemy(){
         return !enemies.isEmpty();
     }
+    public void enemyRemoves(Enemy enemyName) {
+        enemies.remove(enemyName);
+    }
 
-    //Setter
+
+
+    //Setter til retninger af rummene
     public void setRoomNorth(Room roomNorth) {
         this.roomNorth = roomNorth;
     }
@@ -94,6 +104,7 @@ public class Room {
     public ArrayList<Item> getItems() {
         return items;
     }
+
 
 
 

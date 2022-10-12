@@ -12,6 +12,9 @@ public class MeleeWeapon extends Weapon{
         return AttackEnum.MELEE;
     }
 
+    public int getAmmo(){
+        return 0;
+    }
 
     //Override use metode  i weapon
 

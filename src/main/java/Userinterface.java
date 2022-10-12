@@ -104,31 +104,50 @@ public class Userinterface {
                     }
                     break;
                 case "health", "hlt":
-                    int health = adventure.getPlayerHealth();
                     System.out.println("Your health is: " );
                     System.out.println(adventure.getPrintHealthDescription());
                     break;
-                case "eat":
+                case "eat"://TODO Bliver printet for meget ud
                     System.out.println(adventure.getInventory());
                     FoodEnum isFood = adventure.getEat(userChoice);
                     switch (isFood)
                     {
                         case FOOD:
-                            System.out.println("You had eaten " + isFood + " it has been removed from your inventory");
-                            System.out.println("Your health is" + adventure.gethealth());
+                            System.out.println("you had eaten " + isFood + " it has been removed from your inventory");
+                            System.out.println("your health is: " + adventure.gethealth());
                             break;
-
                         case NOT_FOUND:
-                            System.out.println(isFood + " is not in your inventory");
+                            System.out.println(isFood + " it's not in your inventory");
                             break;
-
                         case NOT_FOOD:
-                            System.out.println(isFood + " is not food");
+                            System.out.println(isFood + " you can't eat it!");
                             break;
                     }
                     break;
-               case "attack", "ack":
-                    AttackEnum attack = adventure.getAttack();
+               case "attack", "ack", "fire":
+                   AttackEnum attack = adventure.getAttack();
+                   switch (attack) {
+                       case FIRED:
+                           System.out.println("you has fired " + adventure.getEquippedWeapon() + "!");
+                           if (adventure.getCurrentWeapon() instanceof RangedWeapon)
+                               System.out.println("you have so many ammunition back: " + adventure.getAmmo());
+                           if (adventure.getCurrentWeapon() == null) {
+                               System.out.println("the enemy's life is: " + adventure.getPlayerHealth());
+                               System.out.println("the enemy attacked you " + adventure.getAttack() + " oh no!");
+                               System.out.println("your health points is now: " + adventure.getPlayerHealth());
+                           }
+                           break;
+                       case ENEMY_DEAD:
+                           System.out.println("yes, you did it, the enemy is dead!");
+                           break;
+                       case NO_WEAPON_EQUIPPED:
+                           System.out.println("you don't have a weapon, equip a weapon!");
+                           break;
+                       case NO_AMMO:
+                           System.out.println("you don't have any ammo back, oh no!");
+                        }
+                        break;
+                   /*AttackEnum attack = adventure.getAttack();
                     switch (attack){
                         case ENEMY_ATTACKED:
                             System.out.println("You have attacked the enemy! ");
@@ -142,25 +161,31 @@ public class Userinterface {
                         case NO_AMMO:
                             System.out.println("You don't have any ammo back, oh no!");
                     }
-                    break;
+                    break;*/
                 case "equip", "eq":
                     System.out.println("Your inventory will be showed here:" + adventure.getInventory() );
                     WeaponEnum isWeapon = adventure.getEquipWeapon(getScanString());
-                    switch (isWeapon){
+                    switch (isWeapon) {
                         case WEAPON:
-                            System.out.println("Weapon equipped");
+                            System.out.println(" equipped");
                             break;
                         case NOT_WEAPON:
-                            System.out.println("It's not a weapon");
+                            System.out.println(" it's not a weapon");
                             break;
                         case NOT_FUND:
-                            System.out.println("Weapon not fund");
+                            System.out.println(" weapon not fund");
+                            break;
+                        case NO_WEAPON_EQUIPPED:
+                            if (adventure.getEquippedWeapon() == null) {
+                                System.out.println(" you don't have a weapon equipped");
+                            }
+                            break;
                     }
                     break;
                 case "help", "h":
                     System.out.println(("""
-                            You have some choice here:
-                            Tap - 'go north' or "n" to go north
+                            You have received help-methods here, type a choice!
+                            TAP - 'go north' or "n" to go north
                             Tap - 'go east' or "e" to go east
                             Tap - 'go south' or "s" to go south
                             Tap - 'go west' or "w" to go west

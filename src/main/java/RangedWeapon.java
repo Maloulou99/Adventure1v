@@ -17,5 +17,7 @@ public class RangedWeapon extends Weapon{
             return AttackEnum.NO_AMMO;
     }
 
-
+    public int getAmmo() {
+        return ammo;
+    }
 }

@@ -11,16 +11,13 @@ public class Adventure {
     public Adventure() {
         player = new Player(map.getStarterRoom());
     }
-    public int printHealthPoints(){
-        return player.getPlayerHealth();
-    }
 
     public boolean take(String takeThis) {
         return player.takeItem(takeThis);
     }
 
-    public String gethealth() {
-        return player.printHealthDescription();
+    public int gethealth() {
+        return player.getPlayerHealth();
     }
 
     public boolean dropItem(String itemName) {
@@ -50,6 +47,9 @@ public class Adventure {
     public AttackEnum getAttack(){
         return player.attackEnemy();
     }
+    public AttackEnum getFired(){
+        return player.fired();
+    }
 
     public int getPlayerHealth(){
         return player.getPlayerHealth();
@@ -57,19 +57,22 @@ public class Adventure {
     public String getPrintHealthDescription(){
         return player.printHealthDescription();
     }
-
-    /*public boolean getPlayerEat(String food) {
-        return player.eat(food);
-    }*/
-
     public FoodEnum getEat(String food){
         return player.eatFood(food);
     }
     public WeaponEnum getEquipWeapon(String weaponName){
         return player.equipWeapon(weaponName);
     }
+    public WeaponEnum getEquippedWeapon() {
+        return player.equipWeapon();
+    }
 
+    public Item getCurrentWeapon(){
+        return player.getCurrentWeapon();
+    }
 
-
+    public int getAmmo() {
+        return player.getAmmo();
+    }
 }
 

@@ -6,6 +6,8 @@ public class Enemy {
     private Weapon weapon;
     private String enemyName;
     private String enemyDescription;
+    private Weapon enemyHealth;
+    private Weapon enemyCurrentWeapon;
     private ArrayList<Enemy> enemy = new ArrayList<>();
 
 
@@ -23,14 +25,27 @@ public class Enemy {
     public void setHealth(int health){
         this.health = health;
     }
-    public int getHealth(){
+    public int getEnemyHealth(){
         return health;
     }
     public AttackEnum attack(){
         return AttackEnum.ENEMY_ATTACKED;
     }
 
-    public String toString(){
-        return enemyName + " " + enemyDescription + " \n weapon:" + weapon;
+    //TODO metoder som skal bruges ifht. kriterier....
+    public boolean enemyAlive(Room room) {
+        return room.getEnemy().enemyHealth.getDamage() > 0;
+    }
+    public int enemyAttack() {
+        return enemyCurrentWeapon.getDamage();
+    }
+    public void dropEnemyWeapon(Room currentRoom) {
+        currentRoom.addEnemyItem(enemyCurrentWeapon);
+    }
+
+
+
+    public String toString() {
+        return "Found enemy: \n" +"> " + enemyName + " " + enemyDescription + "\n> Health: " + enemyHealth + "\n> Weapon: " + enemyCurrentWeapon;
     }
 }
