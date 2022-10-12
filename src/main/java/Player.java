@@ -150,8 +150,6 @@ public class Player {
         }
 
   }
-
-
     public boolean move(char direction) {
         Room requestRoom = null;
         if (direction == 'n') {
@@ -238,6 +236,8 @@ public class Player {
         return currentWeapon;
     }
 
+
+    //TODO viser null på health og weapon....
     public AttackEnum attackEnemy(){
         if(equipWeapons != null){
             currentEnemy.setHealth(currentEnemy.getEnemyHealth() - equipWeapons.getDamage());

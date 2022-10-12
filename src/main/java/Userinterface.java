@@ -124,7 +124,7 @@ public class Userinterface {
                             break;
                     }
                     break;
-               case "attack", "ack", "fire":
+               case "attack", "ack", "fire": //TODO Enemy.attack()" because "this.currentEnemy" is null
                    AttackEnum attack = adventure.getAttack();
                    switch (attack) {
                        case FIRED:
@@ -167,7 +167,7 @@ public class Userinterface {
                     WeaponEnum isWeapon = adventure.getEquipWeapon(getScanString());
                     switch (isWeapon) {
                         case WEAPON:
-                            System.out.println(" equipped");
+                            System.out.println("weapon equipped");
                             break;
                         case NOT_WEAPON:
                             System.out.println(" it's not a weapon");
@@ -185,30 +185,41 @@ public class Userinterface {
                 case "help", "h":
                     System.out.println(("""
                             You have received help-methods here, type a choice!
-                            TAP - 'go north' or "n" to go north
-                            Tap - 'go east' or "e" to go east
-                            Tap - 'go south' or "s" to go south
-                            Tap - 'go west' or "w" to go west
-                            Tap - 'look' or "l" to looking
-                            Tap - 'inventory' or 'i' to see your backpack
-                            Tap - 'drop' or 'd' to drop your item
-                            Tap - 'take' or 't' to take a item
-                            Tap - 'eat' to eat something food
-                            Tap - 'health' to see your health
-                            Tap - 'end game' to end the game"""));
+                            To go north:
+                            TAP > 'go north' or "n"
+                            To go east:
+                            TAP > 'go east' or "e"
+                            To go south:
+                            TAP > 'go south' or "s"
+                            To go west:
+                            TAP > 'go west' or "w"
+                            Will you see the things in the room?
+                            TAP > 'look' or "l" to looking
+                            Check your backpack!
+                            TAP > 'inventory' or 'i' to see your backpack
+                            Drop your item in the roomm if you want:
+                            TAP > 'drop' or 'd' to drop your item
+                            Take a item in the room:
+                            TAP > 'take' or 't' to take a item
+                            Are you hungry?
+                            TAP > 'eat' to eat something food
+                            Check your health-points:
+                            TAP > 'health' to see your health
+                            Are you sure you want to end the game?
+                            TAP > 'end game' or 'eg' to end the game"""));
                     break;
-                case "end game":
+                case "end game", "eg":
                     player = false;
                     break;
                 default:
                     System.out.println("Try again");
                     System.out.println("""
-                            Tap - 'go north'
-                            Tap - 'go east'
-                            Tap - 'go south'
-                            Tap - 'go west'
-                            Tap - 'look'
-                            Tap - 'end game'""");
+                            TAP > 'go north'
+                            TAP > 'go east'
+                            TAP > 'go south'
+                            TAP > 'go west'
+                            TAP > 'look'
+                            TAP > 'end game'""");
                     break;
 
             }

@@ -17,7 +17,6 @@ public class Map {
         Room room8 = new Room("Room 8", "room with several spiderwebs on the ceiling");
         Room room9 = new Room("Room 9", "room with a chair");
 
-
         room1.setRoomEast(room2);
         room1.setRoomSouth(room4);
         room1.addItem(new Item("blanket", " lies curled up on the floor"));
@@ -32,15 +31,12 @@ public class Map {
         room2.addEnemy(monster);
         room2.addItem(new MeleeWeapon("knife", " that's a dull one", 12));
 
-
         room3.setRoomWest(room2);
         room3.setRoomSouth(room6);
         room3.addItem(new Item("tv", " can you even watch tv on that tv?"));
         room3.addItem(new Food("sandwich", " there is a fly in the food, eww ", -26));
         room3.addEnemy(new Enemy("robot", " will attack you, do something!", 15, weapon.get(1)));
         room3.addItem(new MeleeWeapon("monsterhands", " hands made be metal", 5));
-
-
 
         room4.setRoomNorth(room1);
         room4.setRoomSouth(room7);
@@ -53,14 +49,11 @@ public class Map {
         room5.addEnemy(spiderman);
         room5.addItem(new MeleeWeapon("sword", " a shiny sword is laying on the ground", 23));
 
-
         room6.setRoomNorth(room3);
         room6.setRoomSouth(room9);
         room6.addItem(new Item("shield", " a shield that seems to have a royal crest on it"));
         room6.addItem(new Food("apple", " the apple is poisoned", -34));
         room6.addItem(new RangedWeapon("bananapell", " it's so shiny", 1, 10));
-
-
 
         room7.setRoomNorth(room4);
         room7.setRoomEast(room8);

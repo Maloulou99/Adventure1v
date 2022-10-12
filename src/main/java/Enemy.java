@@ -34,7 +34,7 @@ public class Enemy {
 
     //TODO metoder som skal bruges ifht. kriterier....
     public boolean enemyAlive(Room room) {
-        return room.getEnemy().enemyHealth.getDamage() > 0;
+        return room.getEnemy().health > 0;
     }
     public int enemyAttack() {
         return enemyCurrentWeapon.getDamage();
@@ -46,6 +46,6 @@ public class Enemy {
 
 
     public String toString() {
-        return "Found enemy: \n" +"> " + enemyName + " " + enemyDescription + "\n> Health: " + enemyHealth + "\n> Weapon: " + enemyCurrentWeapon;
+        return "\nFound enemy: " + enemyName + ", " + enemyDescription + "\nHealth: " + enemyHealth + "\nWeapon: " + enemyCurrentWeapon;
     }
 }
