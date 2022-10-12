@@ -235,21 +235,33 @@ public class Player {
     public Item getCurrentWeapon() {
         return currentWeapon;
     }
+    public int enemyAttack() {
+        return currentRoom.getEnemy().getEnemyHealth();
+    }
 
 
     //TODO viser null på health og weapon....
-    public AttackEnum attackEnemy(){
-        if(equipWeapons != null){
-            currentEnemy.setHealth(currentEnemy.getEnemyHealth() - equipWeapons.getDamage());
-            return equipWeapons.attack();
-        } else if(currentRoom.hasEnemy()){
-            currentEnemy.attack();
-            health = health - equipWeapons.getDamage();
-            return AttackEnum.ENEMY_ATTACKED;
-        }
-        else
+    //TODO Program chrasher vis der ikke er enemy i rummet
+    public AttackEnum attackEnemy() {
+        Enemy attackEnemy = currentRoom.findEnemy();
+        if (currentWeapon != null) {
+            if (currentWeapon instanceof RangedWeapon && currentWeapon.getAmmo() < 1)
+                return AttackEnum.NO_AMMO;
+            if (attackEnemy != null) {
+                attackEnemy.updateEnemyHealth(currentWeapon.getDamage());
+                updatePlayerHealth(enemyAttack());
+                if (!currentEnemy.enemyDead()) {
+                    currentRoom.enemyRemoves(attackEnemy);
+                    currentEnemy.dropEnemyWeapon(currentRoom);
+                    return AttackEnum.ENEMY_DEAD;
+                }
+            }
+            return currentWeapon.attack();
+
+        } else
             return AttackEnum.NO_WEAPON_EQUIPPED;
     }
+
     public int getAmmo(){
         return currentWeapon.getAmmo();
     }

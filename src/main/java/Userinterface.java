@@ -32,9 +32,8 @@ public class Userinterface {
     }
 
     public void startProgram() {
-        System.out.println("Hi, Welcome to the adventure game let's play!");
-        getScanString();
-        System.out.println("Before we start, choice a player name.\n" + "Your name: ");
+        System.out.println("HI, WELCOME TO THE ADVENTUREGAME, LET'S PLAY!");
+        System.out.println("BUT BEFORE WE START! Choice a player-name.\n" + "Right here>>>>> ");
         adventure.setName(getScanString());
         System.out.println("""
                 You will start in room 1, to be able to move, type one of the below:
@@ -104,7 +103,6 @@ public class Userinterface {
                     }
                     break;
                 case "health", "hlt":
-                    System.out.println("Your health is: " );
                     System.out.println(adventure.getPrintHealthDescription());
                     break;
                 case "eat"://TODO Bliver printet for meget ud
@@ -170,14 +168,14 @@ public class Userinterface {
                             System.out.println("weapon equipped");
                             break;
                         case NOT_WEAPON:
-                            System.out.println(" it's not a weapon");
+                            System.out.println("it's not a weapon");
                             break;
                         case NOT_FUND:
-                            System.out.println(" weapon not fund");
+                            System.out.println("weapon not fund");
                             break;
                         case NO_WEAPON_EQUIPPED:
                             if (adventure.getEquippedWeapon() == null) {
-                                System.out.println(" you don't have a weapon equipped");
+                                System.out.println("you don't have a weapon equipped");
                             }
                             break;
                     }

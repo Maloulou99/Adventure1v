@@ -34,6 +34,12 @@ public class Room {
     public Enemy getEnemy(){
        return enemies.get(0);
     }
+    public Enemy findEnemy(){
+        for(Enemy findEnemy : enemies) {
+            return findEnemy;
+        }
+        return null;
+    }
     public boolean hasEnemy(){
         return !enemies.isEmpty();
     }
@@ -87,7 +93,7 @@ public class Room {
 
 
     public String toString() {
-        return roomName + ", " + roomDescription + " " + items + " " + isEnemy();
+        return roomName + ", " + roomDescription + "\n" + items + "\n" + isEnemy();
     }
 
     public String isEnemy() {
@@ -96,6 +102,10 @@ public class Room {
         }
         return "";
     }
+    public boolean enemyAlive() {
+        return enemies.get(0).getEnemyHealth() > 0;
+    }
+
 
     public void removeItem(Item item){
         items.remove(item);
