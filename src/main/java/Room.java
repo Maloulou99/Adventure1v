@@ -22,6 +22,17 @@ public class Room {
     public void addItem(Item item) {
         items.add(item);
     }
+    public void addEnemy(Enemy enemy){
+        enemies.add(enemy);
+    }
+    public Enemy getEnemy(){
+       return enemies.get(0);
+    }
+
+    public boolean hasEnemy(){
+        return !enemies.isEmpty();
+    }
+
     //Setter
     public void setRoomNorth(Room roomNorth) {
         this.roomNorth = roomNorth;
@@ -84,13 +95,8 @@ public class Room {
         return items;
     }
 
-    public void setItem(Item item) {
-        this.items.add(item);
-    }
 
-    public void setEnemies(Enemy enemies){
-        this.enemies.add(enemies);
-    }
+
 
 
 }

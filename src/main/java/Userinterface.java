@@ -2,26 +2,26 @@ import java.util.Scanner;
 
 public class Userinterface {
     private Adventure adventure;
-    private Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
 
     // Bold High Intensity
     public static final String BLACK_BOLD_BRIGHT = "\033[1;90m"; // BLACK
-    public int getScanInt(String errorMessage) {
+    /*public int getScanInt(String errorMessage) {
         while (!scanner.hasNextInt()) {
             System.out.println(errorMessage);
             scanner.next();
         }
         return readInt();
-    }
+    }*/
 
-    public int readInt(){
+    /*public int readInt(){
         int readInt = scanner.nextInt();
         scanner.nextLine();
         return readInt;
     }
     public int getScanInt() {
         return getScanInt("Value is not allowed, try again ");
-    }
+    }*/
 
     public String getScanString() {
         return scanner.nextLine().toLowerCase();
@@ -100,11 +100,32 @@ public class Userinterface {
                     System.out.println("Your health is " + adventure.getPrintHealthDescription());
                     break;
                 case "eat":
-                    System.out.println(adventure.getPlayerEat(userChoice));
+                    System.out.println(adventure.getEat(getScanString()));
+                    System.out.println("Here is your inventory");
+                    System.out.println(adventure.getInventory());
+                    System.out.println("What would you like to eat?");
+                    FoodEnum isFood = adventure.getEat(userChoice);
+                    switch (isFood)
+                    {
+                        case FOOD:
+                            System.out.println("You had eaten " + isFood + " it has been removed from your inventory");
+                            System.out.println("Your health is" + adventure.gethealth());
+                            break;
+
+                        case NOT_FOUND:
+                            System.out.println(isFood + " is not in your inventory");
+                            break;
+
+                        case NOT_FOOD:
+                            System.out.println(isFood + " is not food");
+                            break;
+                    }
                     break;
                case "attack":
                     AttackEnum attack = adventure.getAttack();
                     switch (attack){
+                        case ENEMY_ATTACKED:
+                            System.out.println("You have attacked the enemy! ");
                         case MELEE:
                             System.out.println("Melee has been used!");
                             break;

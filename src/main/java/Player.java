@@ -10,6 +10,7 @@ public class Player {
     private String eat;
     private Weapon equipWeapons;
     private ArrayList<Item> inventory;
+    private Enemy currentEnemy;
 
     //Variabler til player
     public Player(Room currentRoom) {
@@ -20,6 +21,14 @@ public class Player {
 
     }
 
+    public void setHealth(Item item) {
+        if (item instanceof Food) {
+            this.health += 20;
+        }
+        if (health > 100) {
+            health = 100;
+        }
+    }
 
     public Item searchInventory(String itemName) {
         for (Item i : inventory) {
@@ -38,7 +47,7 @@ public class Player {
 
 
     public String look() {
-        return currentRoom.getRoomName() + "\n" + currentRoom.getRoomDescription();
+        return currentRoom.toString();
     }
 
 
@@ -93,6 +102,8 @@ public class Player {
             return WeaponEnum.NOT_FUND;
     }
 
+
+
     public AttackEnum attack() {
         if (currentWeapon != null) {
             return currentWeapon.attack();
@@ -112,7 +123,7 @@ public class Player {
         health += healthPoints;
     }
 
-    public boolean eat(String food) {
+   /* public boolean eat(String food) {
         for (Item foodItem : currentRoom.getItems()) {
             if (foodItem.getItemName().equals(food)) {
                 if (foodItem instanceof Food food1) {
@@ -123,12 +134,26 @@ public class Player {
             }
         }
         return false;
-    }
+    }*/
 
     //En metode som benytter rum-metoderne som bruger kan passere og sættes ind i en forloop
     public Room getCurrentRoom() {
         return currentRoom;
     }
+
+    public FoodEnum eatFood(String itemName) {
+        Item eatItem = searchInventory(itemName);
+        if (eatItem == null) {
+            return FoodEnum.NOT_FOUND;
+        } else if (eatItem instanceof Food) {
+            setHealth(eatItem);
+            inventory.remove(eatItem);
+            return FoodEnum.FOOD;
+        } else {
+            return FoodEnum.NOT_FOOD;
+        }
+
+  }
 
 
     public boolean move(char direction) {
@@ -205,6 +230,18 @@ public class Player {
         return currentWeapon;
     }
 
+    public AttackEnum attackEnemy(){
+        if(equipWeapons instanceof Weapon){
+            currentEnemy.setHealth(currentEnemy.getHealth() - equipWeapons.getDamage());
+            return equipWeapons.attack();
+        } else if(currentRoom.hasEnemy()){
+            currentEnemy.attack();
+            health = health - equipWeapons.getDamage();
+            return AttackEnum.ENEMY_ATTACKED;
+        }
+        else
+            return AttackEnum.NO_WEAPON_EQUIPPED;
+    }
 
 }
 

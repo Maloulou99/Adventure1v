@@ -16,6 +16,10 @@ public class Adventure {
         return player.takeItem(takeThis);
     }
 
+    public String gethealth() {
+        return player.printHealthDescription();
+    }
+
     public enum ReturnMessage{
         NOT_Found,
         CANT,
@@ -54,7 +58,7 @@ public class Adventure {
     }
 
     public AttackEnum getAttack(){
-        return player.attack();
+        return player.attackEnemy();
     }
 
     public int getPlayerHealth(){
@@ -64,12 +68,18 @@ public class Adventure {
         return player.printHealthDescription();
     }
 
-    public boolean getPlayerEat(String food) {
+    /*public boolean getPlayerEat(String food) {
         return player.eat(food);
+    }*/
+
+    public FoodEnum getEat(String food){
+        return player.eatFood(food);
     }
     public WeaponEnum getEquipWeapon(String weaponName){
         return player.equipWeapon(weaponName);
     }
+
+
 
 }
 
