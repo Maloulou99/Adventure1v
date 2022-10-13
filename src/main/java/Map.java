@@ -76,14 +76,12 @@ public class Map {
         room9.addItem(new RangedWeapon("boomerang", "this boomerang have skills", 3, 6));
 
         this.starterRoom = room1;
-
-
     }
 
     public Room getStarterRoom() {
         return starterRoom;
     }
-    //TODO Tilføje weapon til enemy
+
     void createNewWeapons() {
         weapon.add(new RangedWeapon("gun", "cool handheld gun", 5, 10));
         weapon.add(new MeleeWeapon("knife", " hat's a dull one", 12));
@@ -94,6 +92,7 @@ public class Map {
         weapon.add(new RangedWeapon("bananapell", "it's so shiny", 1, 10));
         weapon.add(new MeleeWeapon("monsterhands", "hands made be metal", 10));
     }
+
 
 }
 

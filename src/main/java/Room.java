@@ -34,15 +34,11 @@ public class Room {
     public Enemy getEnemy(){
        return enemies.get(0);
     }
-    public Enemy findEnemy(){
-        for(Enemy findEnemy : enemies) {
-            return findEnemy;
-        }
-        return null;
-    }
+
     public boolean hasEnemy(){
         return !enemies.isEmpty();
     }
+
     public void enemyRemoves(Enemy enemyName) {
         enemies.remove(enemyName);
     }
@@ -102,9 +98,6 @@ public class Room {
         }
         return "";
     }
-    public boolean enemyAlive() {
-        return enemies.get(0).getEnemyHealth() > 0;
-    }
 
 
     public void removeItem(Item item){
@@ -116,8 +109,7 @@ public class Room {
     }
 
 
-
-
-
-
+    public ArrayList<Enemy> getEnemies() {
+        return enemies;
+    }
 }

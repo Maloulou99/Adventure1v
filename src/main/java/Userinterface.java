@@ -38,15 +38,15 @@ public class Userinterface {
         System.out.println("""
                 You will start in room 1, to be able to move, type one of the below:
                 To go north:
-                TAP > 'go north' or "n"
+                TAP > (go north) or (n)
                 To go east:
-                TAP > 'go east' or "e"
+                TAP > (go east) or (e)
                 To go south:
-                TAP > 'go south' or "s"
+                TAP > (go south) or (s)
                 To go west:
-                TAP > 'go west' or "w"
+                TAP > (go west) or (w)
                 If you need help or more information during the game then:
-                TAP > 'help' or 'h' 
+                TAP > (help) or (h) 
                 Good luck and enjoy!
                 """);
 
@@ -89,7 +89,6 @@ public class Userinterface {
                     System.out.println(adventure.look());
                     break;
                 case "inventory", "i":
-                    //System.out.println(adventure.getInventory());
                     for (Item item : adventure.getInventory()) {
                         System.out.println("> " + item.getItemName());
                     }
@@ -102,10 +101,11 @@ public class Userinterface {
                         System.out.println("Couldn't find at item");
                     }
                     break;
-                case "health", "hlt":
+                case "health", "ht":
+                    adventure.gethealth();
                     System.out.println(adventure.getPrintHealthDescription());
                     break;
-                case "eat"://TODO Bliver printet for meget ud
+                case "eat":
                     System.out.println(adventure.getInventory());
                     FoodEnum isFood = adventure.getEat(userChoice);
                     switch (isFood)
@@ -122,17 +122,21 @@ public class Userinterface {
                             break;
                     }
                     break;
-               case "attack", "ack", "fire": //TODO Enemy.attack()" because "this.currentEnemy" is null
+               case "attack", "ack", "fire":
                    AttackEnum attack = adventure.getAttack();
                    switch (attack) {
-                       case FIRED:
+                       case ATTACKED:
                            System.out.println("you has fired " + adventure.getEquippedWeapon() + "!");
                            if (adventure.getCurrentWeapon() instanceof RangedWeapon)
                                System.out.println("you have so many ammunition back: " + adventure.getAmmo());
-                           if (adventure.getCurrentWeapon() == null) {
-                               System.out.println("the enemy's life is: " + adventure.getPlayerHealth());
-                               System.out.println("the enemy attacked you " + adventure.getAttack() + " oh no!");
-                               System.out.println("your health points is now: " + adventure.getPlayerHealth());
+                           if (adventure.getCurrentWeapon() instanceof MeleeWeapon) {
+                               if (adventure.getPlayer().getCurrentRoom().getEnemies().size() > 0){
+                                   System.out.println("the enemy's life is: " + adventure.getEnemyHealth());
+                                   System.out.println("the enemy attacked you " + adventure.getPlayer().getCurrentRoom().getEnemies().get(0).enemyDmg() + " oh no!");
+                               }else {
+                                   System.out.println("The enemy is dead");
+                               }
+                               System.out.println("your health points is now: " + (adventure.getPlayerHealth()));
                            }
                            break;
                        case ENEMY_DEAD:
@@ -145,21 +149,6 @@ public class Userinterface {
                            System.out.println("you don't have any ammo back, oh no!");
                         }
                         break;
-                   /*AttackEnum attack = adventure.getAttack();
-                    switch (attack){
-                        case ENEMY_ATTACKED:
-                            System.out.println("You have attacked the enemy! ");
-                            break;
-                        case MELEE:
-                            System.out.println("Melee has been used!");
-                            break;
-                        case FIRED:
-                            System.out.println("You has fired!");
-                            break;
-                        case NO_AMMO:
-                            System.out.println("You don't have any ammo back, oh no!");
-                    }
-                    break;*/
                 case "equip", "eq":
                     System.out.println("Your inventory will be showed here:" + adventure.getInventory() );
                     WeaponEnum isWeapon = adventure.getEquipWeapon(getScanString());

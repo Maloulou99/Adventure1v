@@ -4,18 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="605caa90-3ed1-4f6a-8feb-e99a5819d211" name="Changes" comment="Metoder til food tilføjet">
+    <list default="true" id="605caa90-3ed1-4f6a-8feb-e99a5819d211" name="Changes" comment="UML class diagram">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Adventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Adventure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Food.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AttackEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AttackEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Userinterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Userinterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Adventure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Adventure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AttackEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AttackEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Enemy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Userinterface$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Userinterface$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Userinterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Userinterface.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,10 +28,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DsmViewSettings">
+    <option name="flattenPackages" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -34,8 +43,26 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../Program Files/Java/jdk-18.0.2.1/lib/src.zip!/java.base/jdk/internal/util/Preconditions.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/Temp1_Adventure1v.zip/Adventure1v/src/main/java/Adventure.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/Temp1_Adventure1v.zip/Adventure1v/src/main/java/Room.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Adventure.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Enemy.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Item.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Map.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Player.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Room.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Userinterface.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Weapon.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+    <option name="showPreview" value="true" />
   </component>
   <component name="ProjectId" id="2FJ64A8fTS2ScsbfxPwNCu2Zcqj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -47,12 +74,24 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Adventure" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Map" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Map" />
       <module name="Adventure" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -61,6 +100,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Map" />
       </list>
     </recent_temporary>
   </component>
@@ -73,21 +113,15 @@
       <option name="presentableId" value="Default" />
       <updated>1664197647564</updated>
       <workItem from="1664197649406" duration="50267000" />
-      <workItem from="1664519214787" duration="70291000" />
-    </task>
-    <task id="LOCAL-00001" summary="Startprogram er fixet">
-      <created>1664204019203</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1664204019203</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Gitignore rettet">
-      <created>1664204980981</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1664204980981</updated>
+      <workItem from="1664519214787" duration="152182000" />
+      <workItem from="1665550443519" duration="10401000" />
+      <workItem from="1665573177682" duration="21580000" />
+      <workItem from="1665603064203" duration="7084000" />
+      <workItem from="1665610417830" duration="826000" />
+      <workItem from="1665611355318" duration="3483000" />
+      <workItem from="1665615277547" duration="183000" />
+      <workItem from="1665648981338" duration="10469000" />
+      <workItem from="1665668844791" duration="2491000" />
     </task>
     <task id="LOCAL-00003" summary="Aflevering 1">
       <created>1664206652184</created>
@@ -306,7 +340,133 @@
       <option name="project" value="LOCAL" />
       <updated>1664914237376</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Metoder til food tilføjet">
+      <created>1664966847025</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1664966847025</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Aflevering 3">
+      <created>1664991836371</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1664991836371</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Tilføjet mere til health">
+      <created>1665124182870</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1665124182870</updated>
+    </task>
+    <task id="LOCAL-00037" summary="aflevering 4">
+      <created>1665150120943</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1665150120943</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Aktivitetsdiagram">
+      <created>1665392740989</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1665392740989</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Aktivitetsdiagram">
+      <created>1665393270359</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1665393270359</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Generate class ny">
+      <created>1665484586836</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1665484586836</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Generate class ny">
+      <created>1665484634741</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1665484634741</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Store ændringer">
+      <created>1665508891016</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1665508891016</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Store ændringer">
+      <created>1665512084327</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1665512084327</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Added attack metode og food">
+      <created>1665574800062</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1665574800062</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Små rettelser">
+      <created>1665588942374</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1665588942374</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Små rettelser">
+      <created>1665589243618</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1665589243618</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Tilføjet metoder til enemy">
+      <created>1665598701775</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1665598701776</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Tilføjet metoder til enemy">
+      <created>1665602835921</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1665602835921</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Fejl jeg skal have rettet">
+      <created>1665609709535</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1665609709536</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Fejl jeg skal have rettet">
+      <created>1665609879881</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1665609879882</updated>
+    </task>
+    <task id="LOCAL-00051" summary="UML class diagram">
+      <created>1665615309625</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1665615309626</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,11 +484,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Startprogram er fixet" />
-    <MESSAGE value="Gitignore rettet" />
-    <MESSAGE value="Aflevering 1" />
-    <MESSAGE value="Option ændret" />
-    <MESSAGE value="Option ændret test" />
     <MESSAGE value=" test" />
     <MESSAGE value="Run test" />
     <MESSAGE value="Test UI" />
@@ -336,15 +491,35 @@
     <MESSAGE value="Aflevering 1 - Spil kører" />
     <MESSAGE value="Aflevering del 1 - Ny klasse" />
     <MESSAGE value="Aflevering del 1 - Rettet klasser" />
-    <MESSAGE value="Små rettelser" />
     <MESSAGE value="UML Diagram" />
     <MESSAGE value="Meget rodet, Room har alle metoder for item nu...." />
     <MESSAGE value="Aflevering 2" />
     <MESSAGE value="Tilføjet todo, da mine metoder ikke helt virker, skal have kigget på det" />
     <MESSAGE value="rettelser" />
-    <MESSAGE value="Aflevering 3" />
     <MESSAGE value="Ny Food klasse tilføjet" />
     <MESSAGE value="Metoder til food tilføjet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Metoder til food tilføjet" />
+    <MESSAGE value="Aflevering 3" />
+    <MESSAGE value="Tilføjet mere til health" />
+    <MESSAGE value="aflevering 4" />
+    <MESSAGE value="Aktivitetsdiagram" />
+    <MESSAGE value="Generate class ny" />
+    <MESSAGE value="Store ændringer" />
+    <MESSAGE value="Added attack metode og food" />
+    <MESSAGE value="Små rettelser" />
+    <MESSAGE value="Tilføjet metoder til enemy" />
+    <MESSAGE value="Fejl jeg skal have rettet" />
+    <MESSAGE value="UML class diagram" />
+    <option name="LAST_COMMIT_MESSAGE" value="UML class diagram" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="this" />
+        <watch expression="currentRoom.getEnemies().size() &lt; 1" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Adventure_java$Main.ic" NAME="Main Coverage Results" MODIFIED="1665514429228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -6,8 +6,6 @@ public class Enemy {
     private Weapon weapon;
     private String enemyName;
     private String enemyDescription;
-    private int enemyHealth;
-    private Weapon enemyCurrentWeapon;
     private ArrayList<Enemy> enemy = new ArrayList<>();
 
 
@@ -29,21 +27,26 @@ public class Enemy {
     public int getEnemyHealth(){
         return health;
     }
-    public AttackEnum attack(){
-        return AttackEnum.ENEMY_ATTACKED;
-    }
 
     public void dropEnemyWeapon(Room currentRoom) {
-        currentRoom.addEnemyItem(enemyCurrentWeapon);
+        currentRoom.addEnemyItem(weapon);
     }
     public void updateEnemyHealth (int enemyHealthDamage) {
         this.health = health - enemyHealthDamage;
     }
     public boolean enemyDead(){
-        return enemyHealth > 0;
+        return health > 0;
     }
 
     public String toString() {
-        return "Found enemy: " + enemyName + ", " + enemyDescription + "\nHealth: " + enemyHealth + "\nWeapon: " + enemyCurrentWeapon;
+        return "Found enemy: " + enemyName + ", " + enemyDescription + "\nHealth: " + health + "\nWeapon: " + weapon;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public int enemyDmg(){
+        return getWeapon().getDamage();
     }
 }

@@ -74,5 +74,22 @@ public class Adventure {
     public int getAmmo() {
         return player.getAmmo();
     }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+    public int getEnemyDmg(){
+        return player.getEnemyDmg();
+    }
+
+
+    public int getEnemyHealth(){
+        return player.getEnemyHealth();
+    }
+
 }
 
