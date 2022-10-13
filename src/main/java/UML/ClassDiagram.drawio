@@ -1,0 +1,254 @@
+<mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" background="none" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="node12" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Adventure&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ Adventure(): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;- player: Player&lt;br/&gt;- map: Map&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ take(String): boolean&lt;br/&gt;+ look(): String&lt;br/&gt;+ getInventory(): ArrayList&amp;lt;Item&amp;gt;&lt;br/&gt;+ getEat(String): FoodEnum&lt;br/&gt;+ getAttack(): AttackEnum&lt;br/&gt;+ go(String): boolean&lt;br/&gt;+ getRoomName(): String&lt;br/&gt;+ gethealth(): int&lt;br/&gt;+ getAmmo(): int&lt;br/&gt;+ getMap(): Map&lt;br/&gt;+ getPlayerHealth(): int&lt;br/&gt;+ setName(String): void&lt;br/&gt;+ getPrintHealthDescription(): String&lt;br/&gt;+ getFired(): AttackEnum&lt;br/&gt;+ getEnemyDmg(): int&lt;br/&gt;+ getEquippedWeapon(): WeaponEnum&lt;br/&gt;+ dropItem(String): boolean&lt;br/&gt;+ getPlayer(): Player&lt;br/&gt;+ getCurrentWeapon(): Item&lt;br/&gt;+ getEnemyHealth(): int&lt;br/&gt;+ getEquipWeapon(String): WeaponEnum&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-76" y="766" width="260" height="562" as="geometry" />
+    </mxCell>
+    <mxCell id="node6" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;AttackEnum&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ AttackEnum(): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ ATTACKED: &lt;br/&gt;+ ENEMY_DEAD: &lt;br/&gt;+ MELEE: &lt;br/&gt;+ NO_WEAPON_EQUIPPED: &lt;br/&gt;+ FIRED: &lt;br/&gt;+ NO_AMMO: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ valueOf(String): AttackEnum&lt;br/&gt;+ values(): AttackEnum[]&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="935" y="871" width="198" height="232" as="geometry" />
+    </mxCell>
+    <mxCell id="node0" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Enemy&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ Enemy(String, String, int, Weapon): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;- enemyName: String&lt;br/&gt;- weapon: Weapon&lt;br/&gt;- enemy: ArrayList&amp;lt;Enemy&amp;gt;&lt;br/&gt;- health: int&lt;br/&gt;- enemyDescription: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getEnemy(): ArrayList&amp;lt;Enemy&amp;gt;&lt;br/&gt;+ getEnemyHealth(): int&lt;br/&gt;+ updateEnemyHealth(int): void&lt;br/&gt;+ dropEnemyWeapon(Room): void&lt;br/&gt;+ getWeapon(): Weapon&lt;br/&gt;+ toString(): String&lt;br/&gt;+ enemyDmg(): int&lt;br/&gt;+ enemyDead(): boolean&lt;br/&gt;+ setHealth(int): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="635" y="865" width="238" height="364" as="geometry" />
+    </mxCell>
+    <mxCell id="node1" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Food&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ Food(String, String, int): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;- healthPoints: int&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getHealthPoints(): int&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="545" y="1337" width="179" height="108" as="geometry" />
+    </mxCell>
+    <mxCell id="node14" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;FoodEnum&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ FoodEnum(): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ NOT_FOOD: &lt;br/&gt;+ NOT_FOUND: &lt;br/&gt;+ FOOD: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ valueOf(String): FoodEnum&lt;br/&gt;+ values(): FoodEnum[]&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="158" y="284" width="192" height="166" as="geometry" />
+    </mxCell>
+    <mxCell id="node9" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Item&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ Item(String, String): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;- itemName: String&lt;br/&gt;- itemDescription: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ toString(): String&lt;br/&gt;+ getItemName(): String&lt;br/&gt;+ getItemDescription(): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="537" y="1504" width="195" height="166" as="geometry" />
+    </mxCell>
+    <mxCell id="node7" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Main&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ Main(): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ main(String[]): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="558" y="729" width="152" height="83" as="geometry" />
+    </mxCell>
+    <mxCell id="node2" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Map&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ Map(): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;- starterRoom: Room&lt;br/&gt;+ weapon: ArrayList&amp;lt;Weapon&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;~ createNewWeapons(): void&lt;br/&gt;+ getStarterRoom(): Room&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-347" y="975" width="202" height="144" as="geometry" />
+    </mxCell>
+    <mxCell id="node10" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;MeleeWeapon&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ MeleeWeapon(String, String, int): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;- ammo: int&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ attack(): AttackEnum&lt;br/&gt;+ getAmmo(): int&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="261" y="1986" width="227" height="132" as="geometry" />
+    </mxCell>
+    <mxCell id="node4" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Player&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ Player(Room): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;- printHealthDescription: String&lt;br/&gt;- eat: String&lt;br/&gt;- inventory: ArrayList&amp;lt;Item&amp;gt;&lt;br/&gt;- currentWeapon: Weapon&lt;br/&gt;- health: int&lt;br/&gt;- equipWeapons: Weapon&lt;br/&gt;- name: String&lt;br/&gt;- currentEnemy: Enemy&lt;br/&gt;- currentRoom: Room&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ setName(String): void&lt;br/&gt;+ getPlayerHealth(): int&lt;br/&gt;+ printHealthDescription(): String&lt;br/&gt;+ dropItem(String): boolean&lt;br/&gt;+ setHealth(Item): void&lt;br/&gt;+ equipWeapon(String): WeaponEnum&lt;br/&gt;+ getEnemyHealth(): int&lt;br/&gt;+ goWest(): boolean&lt;br/&gt;+ getAmmo(): int&lt;br/&gt;+ equipWeapon(): WeaponEnum&lt;br/&gt;+ look(): String&lt;br/&gt;+ attackEnemy(): AttackEnum&lt;br/&gt;+ setEquipWeapons(Weapon): void&lt;br/&gt;+ goEast(): boolean&lt;br/&gt;+ goSouth(): boolean&lt;br/&gt;+ move(char): boolean&lt;br/&gt;+ searchInventory(String): Item&lt;br/&gt;+ getInventory(): ArrayList&amp;lt;Item&amp;gt;&lt;br/&gt;+ takeItem(String): boolean&lt;br/&gt;+ goNorth(): boolean&lt;br/&gt;+ getCurrentRoom(): Room&lt;br/&gt;+ getEnemyDmg(): int&lt;br/&gt;+ getRoomName(): String&lt;br/&gt;+ updatePlayerHealth(int): void&lt;br/&gt;+ enemyAttack(): int&lt;br/&gt;+ eatFood(String): FoodEnum&lt;br/&gt;+ getCurrentWeapon(): Item&lt;br/&gt;+ fired(): AttackEnum&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="253" y="612" width="243" height="870" as="geometry" />
+    </mxCell>
+    <mxCell id="node11" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;RangedWeapon&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ RangedWeapon(String, String, int, int): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;- ammo: int&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ attack(): AttackEnum&lt;br/&gt;+ getAmmo(): int&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="786" y="1766" width="256" height="132" as="geometry" />
+    </mxCell>
+    <mxCell id="node3" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Room&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ Room(String, String): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;- roomEast: Room&lt;br/&gt;- roomName: String&lt;br/&gt;- enemies: ArrayList&amp;lt;Enemy&amp;gt;&lt;br/&gt;- roomDescription: String&lt;br/&gt;- roomNorth: Room&lt;br/&gt;- roomSouth: Room&lt;br/&gt;- items: ArrayList&amp;lt;Item&amp;gt;&lt;br/&gt;- roomWest: Room&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ setRoomEast(Room): void&lt;br/&gt;+ getRoomDescription(): String&lt;br/&gt;+ getEnemy(): Enemy&lt;br/&gt;+ enemyRemoves(Enemy): void&lt;br/&gt;+ getRoomSouth(): Room&lt;br/&gt;+ getRoomEast(): Room&lt;br/&gt;+ setRoomNorth(Room): void&lt;br/&gt;+ addEnemyItem(Item): Weapon&lt;br/&gt;+ getItems(): ArrayList&amp;lt;Item&amp;gt;&lt;br/&gt;+ getRoomWest(): Room&lt;br/&gt;+ setRoomSouth(Room): void&lt;br/&gt;+ addItem(Item): void&lt;br/&gt;+ isEnemy(): String&lt;br/&gt;+ removeItem(Item): void&lt;br/&gt;+ getRoomName(): String&lt;br/&gt;+ toString(): String&lt;br/&gt;+ getEnemies(): ArrayList&amp;lt;Enemy&amp;gt;&lt;br/&gt;+ hasEnemy(): boolean&lt;br/&gt;+ getRoomNorth(): Room&lt;br/&gt;+ setRoomWest(Room): void&lt;br/&gt;+ addEnemy(Enemy): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="644" y="-140" width="220" height="694" as="geometry" />
+    </mxCell>
+    <mxCell id="node8" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Userinterface&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ Userinterface(Adventure): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;~ scanner: Scanner&lt;br/&gt;+ BLACK_BOLD_BRIGHT: String&lt;br/&gt;- adventure: Adventure&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;- command(): void&lt;br/&gt;+ getScanString(): String&lt;br/&gt;+ startProgram(): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-45" y="513" width="198" height="188" as="geometry" />
+    </mxCell>
+    <mxCell id="node13" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Weapon&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ Weapon(String, String, int): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;- ammo: int&lt;br/&gt;- damage: int&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ attack(): AttackEnum&lt;br/&gt;+ getAmmo(): int&lt;br/&gt;+ getDamage(): int&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="276" y="1744" width="196" height="166" as="geometry" />
+    </mxCell>
+    <mxCell id="node5" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;WeaponEnum&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ WeaponEnum(): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ NOT_WEAPON: &lt;br/&gt;+ NO_WEAPON_EQUIPPED: &lt;br/&gt;+ NOT_FUND: &lt;br/&gt;+ WEAPON: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ values(): WeaponEnum[]&lt;br/&gt;+ valueOf(String): WeaponEnum&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-30" y="1393" width="209" height="188" as="geometry" />
+    </mxCell>
+    <mxCell id="edge6" edge="1" value="" parent="1" source="node12" target="node2" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=diamondThinstartSize=12;endArrow=openThin;endSize=12;strokeColor=#595959;exitX=0.000;exitY=0.500;exitDx=0;exitDy=0;entryX=1.000;entryY=0.500;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="label36" parent="edge6" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="-66" y="1013" as="geometry" />
+    </mxCell>
+    <mxCell id="label40" parent="edge6" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="-146" y="993" as="geometry" />
+    </mxCell>
+    <mxCell id="label41" parent="edge6" vertex="1" connectable="0" value="map" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="-139" y="1055" as="geometry" />
+    </mxCell>
+    <mxCell id="edge8" edge="1" value="" parent="1" source="node12" target="node4" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=diamondThinstartSize=12;endArrow=openThin;endSize=12;strokeColor=#595959;exitX=1.000;exitY=0.500;exitDx=0;exitDy=0;entryX=0.000;entryY=0.500;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="label48" parent="edge8" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="191" y="1015" as="geometry" />
+    </mxCell>
+    <mxCell id="label52" parent="edge8" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="213" y="990" as="geometry" />
+    </mxCell>
+    <mxCell id="label53" parent="edge8" vertex="1" connectable="0" value="player" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="235" y="1062" as="geometry" />
+    </mxCell>
+    <mxCell id="edge9" edge="1" value="" parent="1" source="node0" target="node13" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=diamondThinstartSize=12;endArrow=openThin;endSize=12;strokeColor=#595959;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=1.000;entryY=0.434;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="754" y="1816" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="label54" parent="edge9" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="709" y="1222" as="geometry" />
+    </mxCell>
+    <mxCell id="label58" parent="edge9" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="545" y="1817" as="geometry" />
+    </mxCell>
+    <mxCell id="label59" parent="edge9" vertex="1" connectable="0" value="weapon" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="603" y="1799" as="geometry" />
+    </mxCell>
+    <mxCell id="edge2" edge="1" value="" parent="1" source="node1" target="node9" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=0.500;entryY=0.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge12" edge="1" value="" parent="1" source="node2" target="node3" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=diamondThinstartSize=12;endArrow=openThin;endSize=12;strokeColor=#595959;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.000;entryY=0.305;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="-246" y="72" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="label72" parent="edge12" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="188" y="55" as="geometry" />
+    </mxCell>
+    <mxCell id="label76" parent="edge12" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="-247" y="54" as="geometry" />
+    </mxCell>
+    <mxCell id="label77" parent="edge12" vertex="1" connectable="0" value="starterRoom" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="-12" y="99" as="geometry" />
+    </mxCell>
+    <mxCell id="edge13" edge="1" value="" parent="1" source="node2" target="node13" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=diamondThinstartSize=12;endArrow=openThin;endSize=12;strokeColor=#595959;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=0.000;entryY=0.500;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="-246" y="1827" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="label78" parent="edge13" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="-246" y="1124" as="geometry" />
+    </mxCell>
+    <mxCell id="label82" parent="edge13" vertex="1" connectable="0" value="*" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="6" y="1810" as="geometry" />
+    </mxCell>
+    <mxCell id="label83" parent="edge13" vertex="1" connectable="0" value="weapon" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="189" y="1842" as="geometry" />
+    </mxCell>
+    <mxCell id="edge0" edge="1" value="" parent="1" source="node10" target="node13" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge11" edge="1" value="" parent="1" source="node4" target="node0" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=diamondThinstartSize=12;endArrow=openThin;endSize=12;strokeColor=#595959;exitX=1.000;exitY=0.500;exitDx=0;exitDy=0;entryX=0.000;entryY=0.500;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="label66" parent="edge11" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="471" y="1014" as="geometry" />
+    </mxCell>
+    <mxCell id="label70" parent="edge11" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="629" y="1030" as="geometry" />
+    </mxCell>
+    <mxCell id="label71" parent="edge11" vertex="1" connectable="0" value="currentEnemy" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="556" y="1069" as="geometry" />
+    </mxCell>
+    <mxCell id="edge10" edge="1" value="" parent="1" source="node4" target="node9" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=diamondThinstartSize=12;endArrow=openThin;endSize=12;strokeColor=#595959;exitX=0.569;exitY=1.000;exitDx=0;exitDy=0;entryX=0.000;entryY=0.500;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="391" y="1587" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="label60" parent="edge10" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="392" y="1570" as="geometry" />
+    </mxCell>
+    <mxCell id="label64" parent="edge10" vertex="1" connectable="0" value="*" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="523" y="1530" as="geometry" />
+    </mxCell>
+    <mxCell id="label65" parent="edge10" vertex="1" connectable="0" value="inventory" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="484" y="1587" as="geometry" />
+    </mxCell>
+    <mxCell id="edge15" edge="1" value="" parent="1" source="node4" target="node3" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=diamondThinstartSize=12;endArrow=openThin;endSize=12;strokeColor=#595959;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.000;entryY=0.507;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="374" y="212" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="label90" parent="edge15" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="360" y="598" as="geometry" />
+    </mxCell>
+    <mxCell id="label94" parent="edge15" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="373" y="155" as="geometry" />
+    </mxCell>
+    <mxCell id="label95" parent="edge15" vertex="1" connectable="0" value="currentRoom" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="576" y="232" as="geometry" />
+    </mxCell>
+    <mxCell id="edge14" edge="1" value="" parent="1" source="node4" target="node13" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=diamondThinstartSize=12;endArrow=openThin;endSize=12;strokeColor=#595959;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=0.500;entryY=0.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="label84" parent="edge14" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="374" y="1487" as="geometry" />
+    </mxCell>
+    <mxCell id="label88" parent="edge14" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="378" y="1722" as="geometry" />
+    </mxCell>
+    <mxCell id="label89" parent="edge14" vertex="1" connectable="0" value="currentWeapon" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="286" y="1753" as="geometry" />
+    </mxCell>
+    <mxCell id="edge1" edge="1" value="" parent="1" source="node11" target="node13" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.000;exitY=0.500;exitDx=0;exitDy=0;entryX=1.000;entryY=0.500;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge7" edge="1" value="" parent="1" source="node3" target="node0" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=diamondThinstartSize=12;endArrow=openThin;endSize=12;strokeColor=#595959;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=0.500;entryY=0.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="label42" parent="edge7" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="776" y="530" as="geometry" />
+    </mxCell>
+    <mxCell id="label46" parent="edge7" vertex="1" connectable="0" value="*" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="754" y="833" as="geometry" />
+    </mxCell>
+    <mxCell id="label47" parent="edge7" vertex="1" connectable="0" value="enemies" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="701" y="844" as="geometry" />
+    </mxCell>
+    <mxCell id="edge5" edge="1" value="" parent="1" source="node3" target="node9" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=diamondThinstartSize=12;endArrow=openThin;endSize=12;strokeColor=#595959;exitX=1.000;exitY=0.500;exitDx=0;exitDy=0;entryX=1.000;entryY=0.500;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="875" y="207" />
+          <mxPoint x="875" y="1587" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="label30" parent="edge5" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="865" y="1530" as="geometry" />
+    </mxCell>
+    <mxCell id="label34" parent="edge5" vertex="1" connectable="0" value="*" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="732" y="1530" as="geometry" />
+    </mxCell>
+    <mxCell id="label35" parent="edge5" vertex="1" connectable="0" value="items" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="733" y="1598" as="geometry" />
+    </mxCell>
+    <mxCell id="edge4" edge="1" value="" parent="1" source="node8" target="node12" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=diamondThinstartSize=12;endArrow=openThin;endSize=12;strokeColor=#595959;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=0.500;entryY=0.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="label24" parent="edge4" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="59" y="707" as="geometry" />
+    </mxCell>
+    <mxCell id="label28" parent="edge4" vertex="1" connectable="0" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="94" y="743" as="geometry" />
+    </mxCell>
+    <mxCell id="label29" parent="edge4" vertex="1" connectable="0" value="adventure" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;">
+      <mxGeometry x="5" y="745" as="geometry" />
+    </mxCell>
+    <mxCell id="edge3" edge="1" value="" parent="1" source="node13" target="node9" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=1.000;exitY=0.373;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="634" y="1806" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>
