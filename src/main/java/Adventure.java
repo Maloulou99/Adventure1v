@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class Adventure {
 
 
-
     private Player player;
     private Map map = new Map();
 
@@ -44,30 +43,35 @@ public class Adventure {
         return player.getRoomName();
     }
 
-    public AttackEnum getAttack(){
+    public AttackEnum getAttack() {
         return player.attackEnemy();
     }
-    public AttackEnum getFired(){
+
+    public AttackEnum getFired() {
         return player.fired();
     }
 
-    public int getPlayerHealth(){
+    public int getPlayerHealth() {
         return player.getPlayerHealth();
     }
-    public String getPrintHealthDescription(){
+
+    public String getPrintHealthDescription() {
         return player.printHealthDescription();
     }
-    public FoodEnum getEat(String food){
+
+    public FoodEnum getEat(String food) {
         return player.eatFood(food);
     }
-    public WeaponEnum getEquipWeapon(String weaponName){
+
+    public WeaponEnum getEquipWeapon(String weaponName) {
         return player.equipWeapon(weaponName);
     }
+
     public WeaponEnum getEquippedWeapon() {
         return player.equipWeapon();
     }
 
-    public Item getCurrentWeapon(){
+    public Item getCurrentWeapon() {
         return player.getCurrentWeapon();
     }
 
@@ -82,12 +86,13 @@ public class Adventure {
     public Player getPlayer() {
         return player;
     }
-    public int getEnemyDmg(){
+
+    public int getEnemyDmg() {
         return player.getEnemyDmg();
     }
 
 
-    public int getEnemyHealth(){
+    public int getEnemyHealth() {
         return player.getEnemyHealth();
     }
 

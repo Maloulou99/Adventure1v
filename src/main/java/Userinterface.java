@@ -131,8 +131,8 @@ public class Userinterface {
                                System.out.println("you have so many ammunition back: " + adventure.getAmmo());
                            if (adventure.getCurrentWeapon() instanceof MeleeWeapon) {
                                if (adventure.getPlayer().getCurrentRoom().getEnemies().size() > 0){
-                                   System.out.println("the enemy's life is: " + adventure.getEnemyHealth());
-                                   System.out.println("the enemy attacked you " + adventure.getPlayer().getCurrentRoom().getEnemies().get(0).enemyDmg() + " oh no!");
+                                   System.out.println("the enemy's life is: " + adventure.getEnemyHealth()); //TODO Går i null i nogle af rummene
+                                   System.out.println("the enemy attacked you " + adventure.getEnemyDmg() + " oh no!");
                                }else {
                                    System.out.println("The enemy is dead");
                                }
