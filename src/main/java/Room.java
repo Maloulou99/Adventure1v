@@ -8,10 +8,10 @@ public class Room {
     private Room roomSouth;
     private Room roomEast;
     private Room roomWest;
-    private boolean isVisited;
+
     private ArrayList<Item> items = new ArrayList<>();
     private ArrayList<Enemy> enemies = new ArrayList<>();
-
+    private boolean isVisited;
 
     public Room(String roomName, String roomDescription) {
         this.roomName = roomName;
@@ -116,13 +116,8 @@ public class Room {
         return enemies;
     }
 
-    public void setIsVisited(boolean isVisited) {
-        this.isVisited = false;
-    }
 
-    public boolean isVisited() {
-        return true;
-    }
+
 
     public void setRoomName(String roomName) {
         this.roomName = roomName;
@@ -132,9 +127,7 @@ public class Room {
         this.roomDescription = roomDescription;
     }
 
-    public void setVisited(boolean visited) {
-        isVisited = visited;
-    }
+
 
     public void setItems(ArrayList<Item> items) {
         this.items = items;
@@ -142,5 +135,11 @@ public class Room {
 
     public void setEnemies(ArrayList<Enemy> enemies) {
         this.enemies = enemies;
+    }
+    public void setVisited(boolean visited) {
+        isVisited = visited;
+    }
+    public boolean isVisited() {
+        return isVisited;
     }
 }

@@ -13,6 +13,7 @@ public class Player {
     private Enemy currentEnemy;
 
 
+
     //Variabler til player
     public Player(Room currentRoom) {
         this.inventory = new ArrayList<>();
@@ -236,10 +237,10 @@ public class Player {
         } else {
             if (!northRoom.isVisited()) {
                 System.out.println(northRoom.getRoomDescription());
-                markRoomAsVisited(northRoom); // Marker rummet som besøgt
+                markRoomAsVisited(northRoom.getRoomNorth()); // Marker rummet som besøgt
             }
-            currentRoom = northRoom;
-            return true;
+                currentRoom = northRoom;
+                return true;
         }
     }
 
@@ -250,10 +251,10 @@ public class Player {
         } else {
             if (!southRoom.isVisited()) {
                 System.out.println(southRoom.getRoomDescription());
-                markRoomAsVisited(southRoom); // Marker rummet som besøgt
+                markRoomAsVisited(southRoom.getRoomSouth()); // Marker rummet som besøgt
             }
-            currentRoom = southRoom;
-            return true;
+                currentRoom = southRoom;
+                return true;
         }
     }
 
@@ -264,9 +265,9 @@ public class Player {
         } else {
             if (!eastRoom.isVisited()) {
                 System.out.println(eastRoom.getRoomDescription());
-                markRoomAsVisited(eastRoom); // Marker rummet som besøgt
+                markRoomAsVisited(eastRoom.getRoomEast()); // Marker rummet som besøgt
             }
-            currentRoom = eastRoom;
+                currentRoom = eastRoom;
             return true;
         }
     }
@@ -278,16 +279,16 @@ public class Player {
         } else {
             if (!westRoom.isVisited()) {
                 System.out.println(westRoom.getRoomDescription());
-                markRoomAsVisited(westRoom); // Marker rummet som besøgt
+                markRoomAsVisited(westRoom.getRoomWest()); // Marker rummet som besøgt
             }
-            currentRoom = westRoom;
+                currentRoom = westRoom;
             return true;
         }
     }
 
     private void markRoomAsVisited(Room room) {
         // Marker rummet som besøgt (f.eks. sæt en flagvariabel i rummet til true)
-        room.setVisited(true);
+        currentRoom.setVisited(true);
     }
 
 
