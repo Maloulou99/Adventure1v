@@ -8,10 +8,10 @@ public class Player {
     private String name;
     private int health;
     private String printHealthDescription;
-    private String eat;
     private Weapon equipWeapons;
     private ArrayList<Item> inventory;
     private Enemy currentEnemy;
+
 
     //Variabler til player
     public Player(Room currentRoom) {
@@ -30,7 +30,8 @@ public class Player {
             health = 50;
         }
     }
-    public int getEnemyDmg(){
+
+    public int getEnemyDmg() {
         return currentEnemy.enemyDmg();
     }
 
@@ -78,25 +79,28 @@ public class Player {
     }
 
 
-
-   //Vi giver lige brugeren en update på hvordan spillerens health er
+    //Vi giver lige brugeren en update på hvordan spillerens health er
     public String printHealthDescription() {
         String printHealthPoints = "";
         if (health > 0 && health <= 10) {
             printHealthPoints = "Your health is very low, you better do something about it!";
-        }if (health <= 20) {
+        }
+        if (health <= 20) {
             printHealthPoints = "Your health is ok, but you are fighting for your life now";
-        }if (health <= 30) {
+        }
+        if (health <= 30) {
             printHealthPoints = "You are in good shape right now";
-        }if (health <= 40) {
+        }
+        if (health <= 40) {
             printHealthPoints = "You are like a newborn baby, no worries right now";
-        }if (health <= 45) {
+        }
+        if (health <= 45) {
             printHealthPoints = "Your health is top notch, there are a few good pull-ups saved";
         }
-       return printHealthPoints;
+        return printHealthPoints;
     }
 
-    public WeaponEnum equipWeapon(String weaponName) {
+    public WeaponEnum equippedWeapon(String weaponName) {
         Item equipWeapons = searchInventory(weaponName);
         if (equipWeapons == null) {
             return WeaponEnum.NOT_WEAPON;
@@ -105,7 +109,7 @@ public class Player {
             getCurrentRoom().removeItem(equipWeapons);
             return WeaponEnum.WEAPON;
         } else {
-            return WeaponEnum.NOT_FUND;
+            return WeaponEnum.NOT_FOUND;
         }
     }
 
@@ -124,18 +128,6 @@ public class Player {
         health += healthPoints;
     }
 
-   /* public boolean eat(String food) {
-        for (Item foodItem : currentRoom.getItems()) {
-            if (foodItem.getItemName().equals(food)) {
-                if (foodItem instanceof Food food1) {
-                    updatePlayerHealth(food1.getHealthPoints());
-                    inventory.remove(foodItem);
-                    return true;
-                }
-            }
-        }
-        return false;
-    }*/
 
     //En metode som benytter rum-metoderne som bruger kan passere og sættes ind i en forloop
     public Room getCurrentRoom() {
@@ -149,12 +141,73 @@ public class Player {
             inventory.remove(eatItem);
             return FoodEnum.FOOD;
         } else if (eatItem == null) {
-                return FoodEnum.NOT_FOUND;
+            return FoodEnum.NOT_FOUND;
         } else {
             return FoodEnum.NOT_FOOD;
         }
+    }
 
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEquipWeapons(Weapon equipWeapons) {
+        this.equipWeapons = equipWeapons;
+    }
+
+    public WeaponEnum equipWeapon() {
+        Item equipWeapons = searchInventory(currentWeapon.getItemName());
+        if (equipWeapons == null) {
+            return WeaponEnum.NOT_FOUND;
+        } else if (equipWeapons instanceof Weapon) {
+            currentRoom.removeItem(equipWeapons);
+            setEquipWeapons((Weapon) equipWeapons);
+            return WeaponEnum.WEAPON;
+
+        } else
+            return WeaponEnum.NOT_FOUND;
+    }
+
+
+    public Item getCurrentWeapon() {
+        return currentWeapon;
+    }
+
+    public int enemyAttack() {
+        return currentRoom.getEnemy().getEnemyHealth();
+    }
+
+    public AttackEnum attackEnemy() {
+        Enemy attackEnemy = currentRoom.getEnemies().isEmpty() ? null : currentRoom.getEnemies().get(0);
+        if (currentWeapon != null) {
+            if (currentWeapon instanceof RangedWeapon && currentWeapon.getAmmo() < 1) {
+                return AttackEnum.NO_AMMO;
+            }
+            if (attackEnemy != null) {
+                attackEnemy.updateEnemyHealth(currentWeapon.getDamage());
+                updatePlayerHealth(enemyAttack());
+                if (!attackEnemy.enemyDead()) {
+                    currentRoom.enemyRemoves(attackEnemy);
+                    attackEnemy.dropEnemyWeapon(currentRoom);
+                    return AttackEnum.ENEMY_DEAD;
+                }
+            }
+            AttackEnum weaponAttackResult = currentWeapon.attack();
+            if (weaponAttackResult != null) {
+                return weaponAttackResult;
+            }
+        }
+        return AttackEnum.NO_WEAPON_EQUIPPED;
+    }
+
+    public int getAmmo() {
+        return currentWeapon.getAmmo();
+    }
+
+    public int getEnemyHealth() {
+        return currentEnemy.getEnemyHealth();
+    }
+
     public boolean move(char direction) {
         Room requestRoom = null;
         if (direction == 'n') {
@@ -175,101 +228,69 @@ public class Player {
         }
     }
 
-    //Metoder til bruger kan bevæge sig i rummene
+    // Metoder til bruger kan bevæge sig i rummene
     public boolean goNorth() {
-        if (currentRoom.getRoomNorth() == null) {
+        Room northRoom = currentRoom.getRoomNorth();
+        if (northRoom == null) {
             return false;
         } else {
-            currentRoom.getRoomNorth();
+            if (!northRoom.isVisited()) {
+                System.out.println(northRoom.getRoomDescription());
+                markRoomAsVisited(northRoom); // Marker rummet som besøgt
+            }
+            currentRoom = northRoom;
             return true;
         }
     }
 
     public boolean goSouth() {
-        if (currentRoom.getRoomSouth() == null) {
+        Room southRoom = currentRoom.getRoomSouth();
+        if (southRoom == null) {
             return false;
         } else {
-            currentRoom.getRoomSouth();
+            if (!southRoom.isVisited()) {
+                System.out.println(southRoom.getRoomDescription());
+                markRoomAsVisited(southRoom); // Marker rummet som besøgt
+            }
+            currentRoom = southRoom;
             return true;
         }
     }
 
     public boolean goEast() {
-        if (currentRoom.getRoomEast() == null) {
+        Room eastRoom = currentRoom.getRoomEast();
+        if (eastRoom == null) {
             return false;
         } else {
-            currentRoom.getRoomEast();
+            if (!eastRoom.isVisited()) {
+                System.out.println(eastRoom.getRoomDescription());
+                markRoomAsVisited(eastRoom); // Marker rummet som besøgt
+            }
+            currentRoom = eastRoom;
             return true;
         }
     }
 
     public boolean goWest() {
-        if (currentRoom.getRoomWest() == null) {
+        Room westRoom = currentRoom.getRoomWest();
+        if (westRoom == null) {
             return false;
         } else {
-            currentRoom.getRoomEast();
+            if (!westRoom.isVisited()) {
+                System.out.println(westRoom.getRoomDescription());
+                markRoomAsVisited(westRoom); // Marker rummet som besøgt
+            }
+            currentRoom = westRoom;
             return true;
         }
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getRoomName() {
-        return currentRoom.getRoomName();
-    }
-
-    public void setEquipWeapons(Weapon equipWeapons) {
-        this.equipWeapons = equipWeapons;
-    }
-    public WeaponEnum equipWeapon() {
-        Item equipWeapons = searchInventory(currentWeapon.getItemName());
-        if (equipWeapons == null) {
-            return WeaponEnum.NOT_FUND;
-        } else if (equipWeapons instanceof Weapon) {
-            currentRoom.removeItem(equipWeapons);
-            setEquipWeapons((Weapon) equipWeapons);
-            return WeaponEnum.WEAPON;
-
-        } else
-            return WeaponEnum.NOT_FUND;
+    private void markRoomAsVisited(Room room) {
+        // Marker rummet som besøgt (f.eks. sæt en flagvariabel i rummet til true)
+        room.setVisited(true);
     }
 
 
-    public Item getCurrentWeapon() {
-        return currentWeapon;
-    }
-    public int enemyAttack() {
-        return currentRoom.getEnemy().getEnemyHealth();
-    }
 
-    public AttackEnum attackEnemy() {
-        Enemy attackEnemy = currentRoom.getEnemies().size() < 1 ? null : currentRoom.getEnemies().get(0);
-        if (currentWeapon != null) {
-            if (currentWeapon instanceof RangedWeapon && currentWeapon.getAmmo() < 1)
-                return AttackEnum.NO_AMMO;
-            if (attackEnemy != null) {
-                attackEnemy.updateEnemyHealth(currentWeapon.getDamage());
-                updatePlayerHealth(enemyAttack());
-                if (!attackEnemy.enemyDead()) {
-                    currentRoom.enemyRemoves(attackEnemy);
-                    attackEnemy.dropEnemyWeapon(currentRoom);
-                    return AttackEnum.ENEMY_DEAD;
-                }
-            }if(currentWeapon.attack() != null);
-                    return AttackEnum.ATTACKED;
-        } else
-            return AttackEnum.NO_WEAPON_EQUIPPED;
-    }
-
-    public int getAmmo(){
-        return currentWeapon.getAmmo();
-    }
-
-
-    public int getEnemyHealth(){
-        return currentEnemy.getEnemyHealth();
-    }
 }
 

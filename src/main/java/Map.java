@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 
 public class Map {
-    private Room starterRoom;
+    private Room currentRoom;
     public ArrayList<Weapon> weapon = new ArrayList<>();
-
 
     public Map() {
         createNewWeapons();
@@ -75,11 +74,11 @@ public class Map {
         room9.addEnemy(boos);
         room9.addItem(new RangedWeapon("boomerang", "this boomerang have skills", 3, 6));
 
-        this.starterRoom = room1;
+        this.currentRoom = room1;
     }
 
-    public Room getStarterRoom() {
-        return starterRoom;
+    public Room getCurrentRoom() {
+        return currentRoom;
     }
 
     void createNewWeapons() {
@@ -94,6 +93,14 @@ public class Map {
     }
 
 
+
+    public String getRoomName() {
+        return currentRoom.getRoomName();
+    }
+
+    public String getRoomDescription() {
+        return currentRoom.getRoomDescription();
+    }
 }
 
 

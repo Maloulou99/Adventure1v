@@ -1,14 +1,12 @@
 import java.util.ArrayList;
 
 public class Adventure {
-
-
     private Player player;
     private Map map = new Map();
 
 
     public Adventure() {
-        player = new Player(map.getStarterRoom());
+        player = new Player(map.getCurrentRoom());
     }
 
     public boolean take(String takeThis) {
@@ -35,12 +33,16 @@ public class Adventure {
         player.setName(setName);
     }
 
-    public boolean go(String direction) {
-        return player.move(direction.charAt(0));
-    }
+    /*public boolean go(String direction) {
+        return map.move(direction.charAt(0));
+    }*/
 
     public String getRoomName() {
-        return player.getRoomName();
+        return map.getRoomName();
+    }
+
+    public String getRoomDescription(){
+        return map.getRoomDescription();
     }
 
     public AttackEnum getAttack() {
@@ -63,8 +65,8 @@ public class Adventure {
         return player.eatFood(food);
     }
 
-    public WeaponEnum getEquipWeapon(String weaponName) {
-        return player.equipWeapon(weaponName);
+    public WeaponEnum equippedWeapon(String equippedWeapon) {
+        return player.equippedWeapon(equippedWeapon);
     }
 
     public WeaponEnum getEquippedWeapon() {
@@ -96,5 +98,24 @@ public class Adventure {
         return player.getEnemyHealth();
     }
 
+
+    public boolean goNorth() {
+        return player.goNorth();
+    }
+    public boolean goSouth() {
+        return player.goSouth();
+    }  public boolean goEast() {
+        return player.goEast();
+    }  public boolean goWest() {
+        return player.goWest();
+    }
+
+    public boolean move(char direction){
+        return player.move(direction);
+    }
+
+    public Room getCurrentRoom() {
+        return map.getCurrentRoom();
+    }
 }
 

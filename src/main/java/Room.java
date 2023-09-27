@@ -8,6 +8,7 @@ public class Room {
     private Room roomSouth;
     private Room roomEast;
     private Room roomWest;
+    private boolean isVisited;
     private ArrayList<Item> items = new ArrayList<>();
     private ArrayList<Enemy> enemies = new ArrayList<>();
 
@@ -15,6 +16,11 @@ public class Room {
     public Room(String roomName, String roomDescription) {
         this.roomName = roomName;
         this.roomDescription = roomDescription;
+        this.roomEast = null;
+        this.roomWest = null;
+        this.roomNorth = null;
+        this.roomSouth = null;
+        this.isVisited = false;
     }
 
     //Konstruktør som benyttes til Item, så vi kan lave forskellige metoder til Item
@@ -42,8 +48,6 @@ public class Room {
     public void enemyRemoves(Enemy enemyName) {
         enemies.remove(enemyName);
     }
-
-
 
     //Setter til retninger af rummene
     public void setRoomNorth(Room roomNorth) {
@@ -99,7 +103,6 @@ public class Room {
         return "";
     }
 
-
     public void removeItem(Item item){
         items.remove(item);
     }
@@ -111,5 +114,33 @@ public class Room {
 
     public ArrayList<Enemy> getEnemies() {
         return enemies;
+    }
+
+    public void setIsVisited(boolean isVisited) {
+        this.isVisited = false;
+    }
+
+    public boolean isVisited() {
+        return true;
+    }
+
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
+    }
+
+    public void setRoomDescription(String roomDescription) {
+        this.roomDescription = roomDescription;
+    }
+
+    public void setVisited(boolean visited) {
+        isVisited = visited;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
+
+    public void setEnemies(ArrayList<Enemy> enemies) {
+        this.enemies = enemies;
     }
 }

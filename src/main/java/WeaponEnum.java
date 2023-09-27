@@ -1,6 +1,6 @@
 public enum WeaponEnum {
     WEAPON,
-    NOT_FUND,
+    NOT_FOUND,
     NOT_WEAPON,
     NO_WEAPON_EQUIPPED,
 }
