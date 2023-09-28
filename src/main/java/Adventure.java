@@ -33,24 +33,8 @@ public class Adventure {
         player.setName(setName);
     }
 
-    /*public boolean go(String direction) {
-        return map.move(direction.charAt(0));
-    }*/
-
-    public String getRoomName() {
-        return map.getRoomName();
-    }
-
-    public String getRoomDescription(){
-        return map.getRoomDescription();
-    }
-
     public AttackEnum getAttack() {
         return player.attackEnemy();
-    }
-
-    public AttackEnum getFired() {
-        return player.fired();
     }
 
     public int getPlayerHealth() {
@@ -81,10 +65,6 @@ public class Adventure {
         return player.getAmmo();
     }
 
-    public Map getMap() {
-        return map;
-    }
-
     public Player getPlayer() {
         return player;
     }
@@ -93,29 +73,13 @@ public class Adventure {
         return player.getEnemyDmg();
     }
 
-
     public int getEnemyHealth() {
         return player.getEnemyHealth();
-    }
-
-
-    public boolean goNorth() {
-        return player.goNorth();
-    }
-    public boolean goSouth() {
-        return player.goSouth();
-    }  public boolean goEast() {
-        return player.goEast();
-    }  public boolean goWest() {
-        return player.goWest();
     }
 
     public boolean move(char direction){
         return player.move(direction);
     }
 
-    public Room getCurrentRoom() {
-        return map.getCurrentRoom();
-    }
 }
 

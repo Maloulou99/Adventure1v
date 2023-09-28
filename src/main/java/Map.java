@@ -92,15 +92,6 @@ public class Map {
         weapon.add(new MeleeWeapon("monsterhands", "hands made be metal", 10));
     }
 
-
-
-    public String getRoomName() {
-        return currentRoom.getRoomName();
-    }
-
-    public String getRoomDescription() {
-        return currentRoom.getRoomDescription();
-    }
 }
 
 

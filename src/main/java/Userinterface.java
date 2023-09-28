@@ -49,7 +49,7 @@ public class Userinterface {
                 }
                 switch (command) {
                     case "go" -> {
-                        char direction = userChoice.charAt(0);
+                        /*char direction = userChoice.charAt(0);
                         boolean successGo = switch (direction) {
                             case 'n' -> adventure.goNorth();
                             case 's' -> adventure.goSouth();
@@ -63,6 +63,15 @@ public class Userinterface {
                         } else {
                             System.out.println("You cannot go " + userChoice);
                         }
+                    }*/
+                        char direction = userChoice.charAt(0);
+                        boolean successGo = adventure.move(direction);
+                        if (successGo){
+                            System.out.println("You have gone " + userChoice);
+                        } else{
+                            System.out.println("You cannot go " + userChoice);
+                        }
+
                     }
                     case "take", "t" -> {
                         boolean succesTake = adventure.take(userChoice);

@@ -70,7 +70,7 @@ public class Player {
 
     public boolean dropItem(String itemName) {
         for (Item item : inventory) {
-            if (item.getItemName().equals((itemName))) {
+            if (item.getItemName().toLowerCase().equals((itemName))) {
                 currentRoom.getItems().add(item);
                 inventory.remove(item);
                 return true;
@@ -211,23 +211,30 @@ public class Player {
 
     public boolean move(char direction) {
         Room requestRoom = null;
+        boolean success = false;
+
         if (direction == 'n') {
             requestRoom = currentRoom.getRoomNorth();
+            success = goNorth();
         } else if (direction == 's') {
             requestRoom = currentRoom.getRoomSouth();
+            success = goSouth();
         } else if (direction == 'e') {
             requestRoom = currentRoom.getRoomEast();
+            success = goEast();
         } else if (direction == 'w') {
             requestRoom = currentRoom.getRoomWest();
+            success = goWest();
         }
 
-        if (requestRoom != null) {
+        if (success && requestRoom != null) {
             currentRoom = requestRoom;
             return true;
         } else {
             return false;
         }
     }
+
 
     // Metoder til bruger kan bevæge sig i rummene
     public boolean goNorth() {
