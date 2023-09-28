@@ -59,7 +59,7 @@ public class Player {
 
     public boolean takeItem(String itemName) {
         for (Item item : currentRoom.getItems()) {
-            if (item.getItemName().equals(itemName)) {
+            if (item.getItemName().toLowerCase().equals(itemName)) {
                 inventory.add(item);
                 currentRoom.getItems().remove(item);
                 return true;

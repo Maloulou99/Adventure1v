@@ -25,15 +25,15 @@ public class Map {
 
         room2.setRoomWest(room1);
         room2.setRoomEast(room3);
-        room2.addItem(new Item("lamp", "an old lamp hanging at the wall"));
-        Enemy monster = new Enemy("monster", "will try too eat you", 10, weapon.get(7));
+        room2.addItem(new Item("a shiny brass lamp", "an old lamp hanging at the wall"));
+        Enemy monster = new Enemy("big monster", "will try too eat you", 10, weapon.get(7));
         room2.addEnemy(monster);
         room2.addItem(new MeleeWeapon("knife", "that's a dull one", 12));
 
         room3.setRoomWest(room2);
         room3.setRoomSouth(room6);
         room3.addItem(new Item("tv", "can you even watch tv on that tv?"));
-        room3.addItem(new Food("sandwich", "there is a fly in the food, eww ", -26));
+        room3.addItem(new Food("smelling sandwich", "there is a fly in the food, eww ", -26));
         room3.addEnemy(new Enemy("robot", "will attack you, do something!", 15, weapon.get(1)));
         room3.addItem(new MeleeWeapon("monsterhands", "hands made be metal", 5));
 
