@@ -2,7 +2,6 @@ public class MeleeWeapon extends Weapon{
 
     private int ammo;
 
-
     public MeleeWeapon(String itemName, String itemDescription, int damage) {
         super(itemName, itemDescription, damage);
     }
@@ -15,8 +14,5 @@ public class MeleeWeapon extends Weapon{
     public int getAmmo(){
         return 0;
     }
-
-    //Override use metode  i weapon
-
 
 }

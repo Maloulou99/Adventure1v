@@ -81,11 +81,23 @@ public class Room {
     }
 
     public String isEnemy() {
-        if (enemies != null) {
-            return enemies.toString();
+        // Tjek om 'enemies' er ikke-null og ikke tom
+        if (enemies != null && !enemies.isEmpty()) {
+            StringBuilder sb = new StringBuilder();
+            for (Enemy enemy : enemies) {
+                sb.append(enemy.toString()).append(", ");
+            }
+            // Fjern det sidste komma og mellemrum
+            int length = sb.length();
+            if (length > 2) {
+                sb.setLength(length - 2);
+            }
+            return sb.toString();
         }
         return "";
     }
+
+
 
     public void removeItem(Item item){
         items.remove(item);
@@ -96,18 +108,6 @@ public class Room {
     public ArrayList<Enemy> getEnemies() {
         return enemies;
     }
-    public void setRoomName(String roomName) {
-        this.roomName = roomName;
-    }
-    public void setRoomDescription(String roomDescription) {
-        this.roomDescription = roomDescription;
-    }
-    public void setItems(ArrayList<Item> items) {
-        this.items = items;
-    }
-    public void setEnemies(ArrayList<Enemy> enemies) {
-        this.enemies = enemies;
-    }
     public void setVisited(boolean visited) {
         isVisited = visited;
     }
@@ -117,7 +117,33 @@ public class Room {
 
 
     public String toString() {
-        return roomName + ", " + roomDescription + "\n" + items + "\n" + isEnemy();
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Room Name: ").append(roomName).append("\n");
+        stringBuilder.append("Room Description: ").append(roomDescription).append("\n");
+
+        // Håndter items
+        if (!items.isEmpty()) {
+            stringBuilder.append("Items: \n");
+            for (Item item : items) {
+                stringBuilder.append(item);
+            }
+            // Fjern sidste komma og mellemrum
+            stringBuilder.setLength(stringBuilder.length() - 2);
+            stringBuilder.append("\n");
+        } else {
+            stringBuilder.append("No items in the room\n");
+        }
+
+        // Håndter fjender
+        if (isEnemy() != null) {
+            stringBuilder.append("An enemy is present in the room\n" + isEnemy());
+        } else {
+            stringBuilder.append("No enemy in the room\n");
+        }
+
+        return stringBuilder.toString();
     }
+
+
 
 }

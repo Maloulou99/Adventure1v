@@ -16,14 +16,6 @@ public class Enemy {
         this.enemyDescription = enemyDescription;
     }
 
-
-    public ArrayList<Enemy> getEnemy(){
-        return enemy;
-    }
-
-    public void setHealth(int health){
-        this.health = health;
-    }
     public int getEnemyHealth(){
         return health;
     }
@@ -35,13 +27,8 @@ public class Enemy {
         this.health = health - enemyHealthDamage;
     }
     public boolean enemyDead(){
-        return health > 0;
+        return health <= 0;
     }
-
-    public String toString() {
-        return "Found enemy: " + enemyName + ", " + enemyDescription + "\nHealth: " + health + "\nWeapon: " + weapon;
-    }
-
     public Weapon getWeapon() {
         return weapon;
     }
@@ -49,4 +36,18 @@ public class Enemy {
     public int enemyDmg(){
         return getWeapon().getDamage();
     }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Found enemy: ").append(enemyName).append("\n");
+        sb.append("Enemy Description: ").append(enemyDescription).append("\n");
+        sb.append("Health: ").append(health).append("\n");
+        sb.append("Weapon: ").append(weapon).append("\n");
+
+        return sb.toString();
+    }
+
+
+
 }

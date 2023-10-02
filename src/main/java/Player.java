@@ -45,7 +45,6 @@ public class Player {
         return null;
     }
 
-
     //Inventory metode
     public ArrayList<Item> getInventory() {
         return inventory;
@@ -55,7 +54,6 @@ public class Player {
     public String look() {
         return currentRoom.toString();
     }
-
 
     public boolean takeItem(String itemName) {
         for (Item item : currentRoom.getItems()) {
@@ -114,13 +112,6 @@ public class Player {
         }
     }
 
-    public AttackEnum fired() {
-        if (currentWeapon != null) {
-            return currentWeapon.attack();
-        } else
-            return AttackEnum.NO_WEAPON_EQUIPPED;
-    }
-
     public int getPlayerHealth() {
         return health;
     }
@@ -128,7 +119,6 @@ public class Player {
     public void updatePlayerHealth(int healthPoints) {
         health += healthPoints;
     }
-
 
     //En metode som benytter rum-metoderne som bruger kan passere og sættes ind i en forloop
     public Room getCurrentRoom() {
@@ -189,7 +179,7 @@ public class Player {
                 if (attackEnemy != null) {
                     attackEnemy.updateEnemyHealth(currentWeapon.getDamage());
                     updatePlayerHealth(enemyAttack());
-                    if (!attackEnemy.enemyDead()) {
+                    if (attackEnemy.enemyDead()) {
                         currentRoom.enemyRemoves(attackEnemy);
                         attackEnemy.dropEnemyWeapon(currentRoom);
                         return AttackEnum.ENEMY_DEAD;
@@ -203,7 +193,7 @@ public class Player {
                 if (attackEnemy != null) {
                     attackEnemy.updateEnemyHealth(currentWeapon.getDamage());
                     updatePlayerHealth(enemyAttack());
-                    if (!attackEnemy.enemyDead()) {
+                    if (attackEnemy.enemyDead()) {
                         currentRoom.enemyRemoves(attackEnemy);
                         attackEnemy.dropEnemyWeapon(currentRoom);
                         return AttackEnum.ENEMY_DEAD;
