@@ -33,18 +33,12 @@ public class Room {
     public void addEnemy(Enemy enemy){
         enemies.add(enemy);
     }
-    public Weapon addEnemyItem(Item enemyItem) {
+    public void addEnemyItem(Item enemyItem) {
         items.add(enemyItem);
-        return null;
     }
     public Enemy getEnemy(){
        return enemies.get(0);
     }
-
-    public boolean hasEnemy(){
-        return !enemies.isEmpty();
-    }
-
     public void enemyRemoves(Enemy enemyName) {
         enemies.remove(enemyName);
     }
@@ -70,30 +64,20 @@ public class Room {
     public Room getRoomNorth() {
         return roomNorth;
     }
-
     public Room getRoomSouth() {
         return roomSouth;
     }
-
     public Room getRoomEast() {
         return roomEast;
     }
-
     public Room getRoomWest() {
         return roomWest;
     }
-
     public String getRoomDescription() {
         return roomDescription;
     }
-
     public String getRoomName() {
         return roomName;
-    }
-
-
-    public String toString() {
-        return roomName + ", " + roomDescription + "\n" + items + "\n" + isEnemy();
     }
 
     public String isEnemy() {
@@ -106,33 +90,21 @@ public class Room {
     public void removeItem(Item item){
         items.remove(item);
     }
-
     public ArrayList<Item> getItems() {
         return items;
     }
-
-
     public ArrayList<Enemy> getEnemies() {
         return enemies;
     }
-
-
-
-
     public void setRoomName(String roomName) {
         this.roomName = roomName;
     }
-
     public void setRoomDescription(String roomDescription) {
         this.roomDescription = roomDescription;
     }
-
-
-
     public void setItems(ArrayList<Item> items) {
         this.items = items;
     }
-
     public void setEnemies(ArrayList<Enemy> enemies) {
         this.enemies = enemies;
     }
@@ -140,6 +112,12 @@ public class Room {
         isVisited = visited;
     }
     public boolean isVisited() {
-        return isVisited;
+        return !isVisited;
     }
+
+
+    public String toString() {
+        return roomName + ", " + roomDescription + "\n" + items + "\n" + isEnemy();
+    }
+
 }

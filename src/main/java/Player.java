@@ -180,26 +180,43 @@ public class Player {
 
     public AttackEnum attackEnemy() {
         Enemy attackEnemy = currentRoom.getEnemies().isEmpty() ? null : currentRoom.getEnemies().get(0);
+
         if (currentWeapon != null) {
-            if (currentWeapon instanceof RangedWeapon && currentWeapon.getAmmo() < 1) {
-                return AttackEnum.NO_AMMO;
-            }
-            if (attackEnemy != null) {
-                attackEnemy.updateEnemyHealth(currentWeapon.getDamage());
-                updatePlayerHealth(enemyAttack());
-                if (!attackEnemy.enemyDead()) {
-                    currentRoom.enemyRemoves(attackEnemy);
-                    attackEnemy.dropEnemyWeapon(currentRoom);
-                    return AttackEnum.ENEMY_DEAD;
+            if (currentWeapon instanceof RangedWeapon) {
+                if (currentWeapon.getAmmo() < 1) {
+                    return AttackEnum.NO_AMMO;
+                }
+                if (attackEnemy != null) {
+                    attackEnemy.updateEnemyHealth(currentWeapon.getDamage());
+                    updatePlayerHealth(enemyAttack());
+                    if (!attackEnemy.enemyDead()) {
+                        currentRoom.enemyRemoves(attackEnemy);
+                        attackEnemy.dropEnemyWeapon(currentRoom);
+                        return AttackEnum.ENEMY_DEAD;
+                    }
+                }
+                AttackEnum weaponAttackResult = currentWeapon.attack();
+                if (weaponAttackResult != null) {
+                    return weaponAttackResult;
+                }
+            } else if (currentWeapon instanceof MeleeWeapon) {
+                if (attackEnemy != null) {
+                    attackEnemy.updateEnemyHealth(currentWeapon.getDamage());
+                    updatePlayerHealth(enemyAttack());
+                    if (!attackEnemy.enemyDead()) {
+                        currentRoom.enemyRemoves(attackEnemy);
+                        attackEnemy.dropEnemyWeapon(currentRoom);
+                        return AttackEnum.ENEMY_DEAD;
+                    }
                 }
             }
-            AttackEnum weaponAttackResult = currentWeapon.attack();
-            if (weaponAttackResult != null) {
-                return weaponAttackResult;
-            }
+        } else {
+            return AttackEnum.NO_WEAPON_EQUIPPED;
         }
-        return AttackEnum.NO_WEAPON_EQUIPPED;
+
+        return AttackEnum.NO_WEAPON_EQUIPPED; // Fallback hvis ingen tidligere tilfeller passet
     }
+
 
     public int getAmmo() {
         return currentWeapon.getAmmo();
@@ -242,7 +259,7 @@ public class Player {
         if (northRoom == null) {
             return false;
         } else {
-            if (!northRoom.isVisited()) {
+            if (northRoom.isVisited()) {
                 System.out.println(northRoom.getRoomDescription());
                 markRoomAsVisited(northRoom.getRoomNorth()); // Marker rummet som besøgt
             }
@@ -256,7 +273,7 @@ public class Player {
         if (southRoom == null) {
             return false;
         } else {
-            if (!southRoom.isVisited()) {
+            if (southRoom.isVisited()) {
                 System.out.println(southRoom.getRoomDescription());
                 markRoomAsVisited(southRoom.getRoomSouth()); // Marker rummet som besøgt
             }
@@ -270,7 +287,7 @@ public class Player {
         if (eastRoom == null) {
             return false;
         } else {
-            if (!eastRoom.isVisited()) {
+            if (eastRoom.isVisited()) {
                 System.out.println(eastRoom.getRoomDescription());
                 markRoomAsVisited(eastRoom.getRoomEast()); // Marker rummet som besøgt
             }
@@ -284,7 +301,7 @@ public class Player {
         if (westRoom == null) {
             return false;
         } else {
-            if (!westRoom.isVisited()) {
+            if (westRoom.isVisited()) {
                 System.out.println(westRoom.getRoomDescription());
                 markRoomAsVisited(westRoom.getRoomWest()); // Marker rummet som besøgt
             }
